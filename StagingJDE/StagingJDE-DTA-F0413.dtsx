@@ -1,0 +1,1949 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/25/2014 8:49:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="W2K8R2-SQL2K8R2"
+  DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
+  DTS:DTSID="{F6F78992-4BEF-48FB-9E57-25E09099CC1A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StagingJDE-DTA-F0413"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="411"
+  DTS:VersionGUID="{4842A88A-D92D-4F9D-944E-E02F2FE4CA29}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JDE.BIEXTRACT]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{B12C7D23-8E77-4DB8-A1CB-14632E57312E}"
+      DTS:ObjectName="JDE.BIEXTRACT">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::JDEConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Project::JDEPassword]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Project::JDEUserName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="aUpj21qveA=="
+            IV="a3qcRNjfNNA=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>a3qcRNjfNNBueZyKiwi+8I8BoQLaIOyqYuRXizi146GTeG3xvldpEOuAZ2aLvRTbgImSv8NvVBSSn/BeIWmGfC6unY2OdQ4fIOis12vn9mMfCyNLxQahwXjwCd+Q+eXK4m7dTDHC9wBbxpPdP60VSFJl2vDSxQHV</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="Log"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{64B706E8-8298-4E26-8CAE-8CCBF4175132}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{09CD57F2-1F74-4C40-8DD4-364C91E49FDB}"
+      DTS:ObjectName="P_COM_LIB">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">JPCOMFR73</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{ED20EE13-D41B-4870-A873-85A6B9532D0F}"
+      DTS:ObjectName="P_DTA_LIB">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">JPDTAFR73</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C6FB0989-F7C4-48FE-9D9E-404C89EF3119}"
+      DTS:ObjectName="P_LAST_RUN_DT">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">1900-01-01</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C09E4DCA-9014-435D-8D70-E5E84BBD55A9}"
+      DTS:ObjectName="P_SOURCE_SYSTEM_ID">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">63</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5825ACF1-F1ED-4541-96AD-7071C16CD394}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastUpdatedJulianDate">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1C8BD643-CEDC-4F2E-8781-8694C25C1980}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rowcount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{25754BF6-1790-4335-B4C5-BF3C41892950}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DELETE FROM &quot; +  @[User::StagingTableName] +&#xA;&quot; WITH (ROWLOCK) WHERE SourceSystemID = '&quot; + @[$Package::P_SOURCE_SYSTEM_ID] + &quot;' AND TransactionDate &gt;= '&quot;+ @[$Package::P_LAST_RUN_DT]+&quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLDeleteTable">
+      <DTS:VariableValue
+        DTS:DataType="8">DELETE FROM stg.JDE_F0413 WITH (ROWLOCK) WHERE SourceSystemID = '63' AND TransactionDate &gt;= '1900-01-01'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{887BC140-5564-4474-8FAB-A2832F5137E5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT  *&#xA;  &#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0413 &#xA;&#xA;WHERE&#xA; 1=1&#xA; AND RMUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLJDESourceQuery">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT  *
+  
+FROM 
+JPDTAFR73.F0413 
+
+WHERE
+ 1=1
+ AND RMUPMJ &gt;=0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{98A8A959-DA70-47FE-A035-90AACC7A6956}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="StagingTableName">
+      <DTS:VariableValue
+        DTS:DataType="8">stg.JDE_F0413</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">2,7,OnError,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{64B706E8-8298-4E26-8CAE-8CCBF4175132}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Processing"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{970CE402-139B-47DD-8255-39A5143528CD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Processing">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Data Processing\StageLoad"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{941797AA-9953-4031-8449-089856DE9B87}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="StageLoad"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:PropertyExpression
+            DTS:Name="BLOBTempStoragePath">@[$Project::BufferTempLocation]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="BufferTempStoragePath">@[$Project::BufferTempLocation]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <pipeline
+              BLOBTempStoragePath="C:\TEMP"
+              bufferTempStoragePath="C:\TEMP"
+              defaultBufferMaxRows="500000"
+              defaultBufferSize="524288000"
+              version="1">
+              <components>
+                <component
+                  refId="Package\Data Processing\StageLoad\Add Metadata"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Updates column values using expressions"
+                  name="Add Metadata"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Data Processing\StageLoad\Add Metadata.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Inputs[Derived Column Input].Columns[RMUPMJ]"
+                          cachedDataType="numeric"
+                          cachedName="RMUPMJ"
+                          cachedPrecision="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMJ]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Data Processing\StageLoad\Add Metadata.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[LineageTMST]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[LineageTMST]"
+                          name="LineageTMST"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETUTCDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETUTCDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[UpdatedLineageString]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[UpdatedLineageString]"
+                          name="UpdatedLineageString"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,30,1252)@[System::ServerExecutionID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,30,1252)@[System::ServerExecutionID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[JDECOMLibrary]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="9"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[JDECOMLibrary]"
+                          name="JDECOMLibrary"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::P_COM_LIB]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::P_COM_LIB]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[JDEDATLibrary]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="9"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[JDEDATLibrary]"
+                          name="JDEDATLibrary"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::P_DTA_LIB]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::P_DTA_LIB]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[SourceSystemID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[SourceSystemID]"
+                          name="SourceSystemID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Calcul"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]"
+                          name="TransactionDate"
+                          precision="6"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expression de colonne dérivée"
+                              name="Expression">#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMJ]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expression claire de colonne dérivée"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RMUPMJ</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Data Processing\StageLoad\Add Metadata.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+                  description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+                  name="JDE Transaction Date conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]"
+                      description="Entrée de la transformation de colonnes dérivées"
+                      name="Entrée de colonne dérivée">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée].Columns[TransactionDate]"
+                          cachedDataType="numeric"
+                          cachedName="TransactionDate"
+                          cachedPrecision="6"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée]"
+                      description="Sortie par défaut de la transformation de colonnes dérivées"
+                      exclusionGroup="1"
+                      name="Sortie de colonne dérivée"
+                      synchronousInputId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Calcul"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]"
+                          name="TransactionDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expression de colonne dérivée"
+                              name="Expression">(#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]} == 0 ? (DT_DATE)"1900-01-01" : [DATEADD]("day",(DT_I8)[RIGHT]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]},3) - 1,(DT_DATE)((DT_STR,20,1252)(#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]} &gt;= 100000 ? (DT_STR,10,1252)(20 + (DT_I8)([SUBSTRING]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]},1,1)) - 1) : "19") + (#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]} &gt;= 100000 ? [SUBSTRING]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]},2,2) : [SUBSTRING]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[TransactionDate]},1,2)) + "-01-01")))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expression claire de colonne dérivée"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(TransactionDate == 0 ? (DT_DATE)"1900-01-01" : DATEADD("day",(DT_I8)RIGHT((DT_STR,10,1252)TransactionDate,3) - 1,(DT_DATE)((DT_STR,20,1252)(TransactionDate &gt;= 100000 ? (DT_STR,10,1252)(20 + (DT_I8)(SUBSTRING((DT_STR,10,1252)TransactionDate,1,1)) - 1) : "19") + (TransactionDate &gt;= 100000 ? SUBSTRING((DT_STR,10,1252)TransactionDate,2,2) : SUBSTRING((DT_STR,10,1252)TransactionDate,1,2)) + "-01-01")))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée]"
+                      description="Sortie d'erreur de la transformation de colonnes dérivées"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Sortie d'erreur de colonne dérivée"
+                      synchronousInputId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Processing\StageLoad\ODBC Source"
+                  componentClassID="Attunity.SSISODBCSrc"
+                  contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
+                  description="ODBC Source"
+                  name="ODBC Source"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand">SELECT  *
+  
+FROM 
+JPDTAFR73.F0413 
+
+WHERE
+ 1=1
+ AND RMUPMJ &gt;=0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">10000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                      expressionType="Notify"
+                      name="ExposeCharColumnsAsUnicode">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for fetching data."
+                      expressionType="Notify"
+                      name="FetchMethod"
+                      typeConverter="FetchMethod">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs"
+                      typeConverter="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs"
+                      typeConverter="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Processing\StageLoad\ODBC Source.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[JDE.BIEXTRACT]"
+                      connectionManagerRefId="Package.ConnectionManagers[JDE.BIEXTRACT]"
+                      description="The ODBC runtime connection"
+                      name="ODBCConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output]"
+                      errorRowDisposition="FailComponent"
+                      name="ODBC Source Output"
+                      truncationRowDisposition="FailComponent">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYID]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYID]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYID]"
+                          name="RMPYID"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDCTM]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDCTM]"
+                          length="2"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDCTM]"
+                          name="RMDCTM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDOCM]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDOCM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDOCM]"
+                          name="RMDOCM"
+                          precision="8" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYE]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYE]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYE]"
+                          name="RMPYE"
+                          precision="8" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMGLBA]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMGLBA]"
+                          length="8"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMGLBA]"
+                          name="RMGLBA" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDMTJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDMTJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDMTJ]"
+                          name="RMDMTJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMVDGJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMVDGJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMVDGJ]"
+                          name="RMVDGJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMICU]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMICU]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMICU]"
+                          name="RMICU"
+                          precision="8" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMICUT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMICUT]"
+                          length="2"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMICUT]"
+                          name="RMICUT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDICJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDICJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDICJ]"
+                          name="RMDICJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPAAP]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPAAP]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPAAP]"
+                          name="RMPAAP"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCRCD]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCRCD]"
+                          length="3"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCRCD]"
+                          name="RMCRCD" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCRRM]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCRRM]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCRRM]"
+                          name="RMCRRM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMAM]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMAM]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMAM]"
+                          name="RMAM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMVLDT]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMVLDT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMVLDT]"
+                          name="RMVLDT"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYIN]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYIN]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYIN]"
+                          name="RMPYIN" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMISTP]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMISTP]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMISTP]"
+                          name="RMISTP" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCBNK]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCBNK]"
+                          length="20"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCBNK]"
+                          name="RMCBNK" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMBKTR]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMBKTR]"
+                          length="8"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMBKTR]"
+                          name="RMBKTR" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMTORG]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMTORG]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMTORG]"
+                          name="RMTORG" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUSER]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUSER]"
+                          name="RMUSER" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPID]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPID]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPID]"
+                          name="RMPID" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMJ]"
+                          name="RMUPMJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMT]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMT]"
+                          name="RMUPMT"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMJOBN]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMJOBN]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMJOBN]"
+                          name="RMJOBN" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYID]"
+                          dataType="numeric"
+                          name="RMPYID"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDCTM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="RMDCTM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDOCM]"
+                          dataType="numeric"
+                          name="RMDOCM"
+                          precision="8" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYE]"
+                          dataType="numeric"
+                          name="RMPYE"
+                          precision="8" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMGLBA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="RMGLBA" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDMTJ]"
+                          dataType="numeric"
+                          name="RMDMTJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMVDGJ]"
+                          dataType="numeric"
+                          name="RMVDGJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMICU]"
+                          dataType="numeric"
+                          name="RMICU"
+                          precision="8" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMICUT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="RMICUT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDICJ]"
+                          dataType="numeric"
+                          name="RMDICJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPAAP]"
+                          dataType="numeric"
+                          name="RMPAAP"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCRCD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="RMCRCD" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCRRM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMCRRM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMAM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMAM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMVLDT]"
+                          dataType="numeric"
+                          name="RMVLDT"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMPYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMISTP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMISTP" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCBNK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="RMCBNK" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMBKTR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="RMBKTR" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMTORG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMTORG" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMPID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUPMJ]"
+                          dataType="numeric"
+                          name="RMUPMJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUPMT]"
+                          dataType="numeric"
+                          name="RMUPMT"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMJOBN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMJOBN" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output]"
+                      isErrorOut="true"
+                      name="ODBC Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPYID]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYID]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPYID]"
+                          name="RMPYID"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDCTM]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDCTM]"
+                          length="2"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDCTM]"
+                          name="RMDCTM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDOCM]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDOCM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDOCM]"
+                          name="RMDOCM"
+                          precision="8" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPYE]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYE]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPYE]"
+                          name="RMPYE"
+                          precision="8" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMGLBA]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMGLBA]"
+                          length="8"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMGLBA]"
+                          name="RMGLBA" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDMTJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDMTJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDMTJ]"
+                          name="RMDMTJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMVDGJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMVDGJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMVDGJ]"
+                          name="RMVDGJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMICU]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMICU]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMICU]"
+                          name="RMICU"
+                          precision="8" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMICUT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMICUT]"
+                          length="2"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMICUT]"
+                          name="RMICUT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDICJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMDICJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMDICJ]"
+                          name="RMDICJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPAAP]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPAAP]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPAAP]"
+                          name="RMPAAP"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMCRCD]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCRCD]"
+                          length="3"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMCRCD]"
+                          name="RMCRCD" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMCRRM]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCRRM]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMCRRM]"
+                          name="RMCRRM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMAM]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMAM]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMAM]"
+                          name="RMAM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMVLDT]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMVLDT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMVLDT]"
+                          name="RMVLDT"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPYIN]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPYIN]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPYIN]"
+                          name="RMPYIN" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMISTP]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMISTP]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMISTP]"
+                          name="RMISTP" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMCBNK]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMCBNK]"
+                          length="20"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMCBNK]"
+                          name="RMCBNK" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMBKTR]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMBKTR]"
+                          length="8"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMBKTR]"
+                          name="RMBKTR" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMTORG]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMTORG]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMTORG]"
+                          name="RMTORG" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUSER]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMUSER]"
+                          name="RMUSER" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPID]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMPID]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMPID]"
+                          name="RMPID" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMUPMJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMUPMJ]"
+                          name="RMUPMJ"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMUPMT]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMUPMT]"
+                          name="RMUPMT"
+                          precision="6" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMJOBN]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[RMJOBN]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[RMJOBN]"
+                          name="RMJOBN" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Data Processing\StageLoad\Staging Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Staging Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[JDE_F0413]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable">User::StagingTableName</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">100000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Data Processing\StageLoad\Staging Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[LineageTMST]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="LineageTMST"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineageTMST]"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[LineageTMST]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[UpdatedLineageString]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="UpdatedLineageString"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedLineageString]"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[UpdatedLineageString]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[JDECOMLibrary]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="JDECOMLibrary"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[JDECOMLibrary]"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[JDECOMLibrary]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[JDEDATLibrary]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="JDEDATLibrary"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[JDEDATLibrary]"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[JDEDATLibrary]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[SourceSystemID]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="SourceSystemID"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemID]"
+                          lineageId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output].Columns[SourceSystemID]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMPYID]"
+                          cachedDataType="numeric"
+                          cachedName="RMPYID"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPYID]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYID]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMDCTM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="RMDCTM"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDCTM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDCTM]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMDOCM]"
+                          cachedDataType="numeric"
+                          cachedName="RMDOCM"
+                          cachedPrecision="8"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDOCM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDOCM]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMPYE]"
+                          cachedDataType="numeric"
+                          cachedName="RMPYE"
+                          cachedPrecision="8"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPYE]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYE]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMGLBA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="RMGLBA"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMGLBA]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMGLBA]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMDMTJ]"
+                          cachedDataType="numeric"
+                          cachedName="RMDMTJ"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDMTJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDMTJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMVDGJ]"
+                          cachedDataType="numeric"
+                          cachedName="RMVDGJ"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMVDGJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMVDGJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMICU]"
+                          cachedDataType="numeric"
+                          cachedName="RMICU"
+                          cachedPrecision="8"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMICU]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMICU]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMICUT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="RMICUT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMICUT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMICUT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMDICJ]"
+                          cachedDataType="numeric"
+                          cachedName="RMDICJ"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDICJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMDICJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMPAAP]"
+                          cachedDataType="numeric"
+                          cachedName="RMPAAP"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPAAP]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPAAP]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMCRCD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="RMCRCD"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMCRCD]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCRCD]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMCRRM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RMCRRM"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMCRRM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCRRM]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMAM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RMAM"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMAM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMAM]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMVLDT]"
+                          cachedDataType="numeric"
+                          cachedName="RMVLDT"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMVLDT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMVLDT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMPYIN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RMPYIN"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPYIN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPYIN]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMISTP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RMISTP"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMISTP]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMISTP]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMCBNK]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="RMCBNK"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMCBNK]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMCBNK]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMBKTR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="RMBKTR"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMBKTR]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMBKTR]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMTORG]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="RMTORG"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMTORG]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMTORG]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMUSER]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="RMUSER"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMUSER]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUSER]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMPID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="RMPID"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPID]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMPID]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMUPMJ]"
+                          cachedDataType="numeric"
+                          cachedName="RMUPMJ"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMUPMT]"
+                          cachedDataType="numeric"
+                          cachedName="RMUPMT"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMUPMT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[RMJOBN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="RMJOBN"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMJOBN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[RMJOBN]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].Columns[TransactionDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="TransactionDate"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineageTMST]"
+                          dataType="dbTimeStamp"
+                          name="LineageTMST" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedLineageString]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="UpdatedLineageString" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[JDECOMLibrary]"
+                          dataType="wstr"
+                          length="9"
+                          name="JDECOMLibrary" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[JDEDATLibrary]"
+                          dataType="wstr"
+                          length="9"
+                          name="JDEDATLibrary" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemID]"
+                          dataType="wstr"
+                          length="2"
+                          name="SourceSystemID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPYID]"
+                          dataType="numeric"
+                          name="RMPYID"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDCTM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="RMDCTM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDOCM]"
+                          dataType="numeric"
+                          name="RMDOCM"
+                          precision="8" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPYE]"
+                          dataType="numeric"
+                          name="RMPYE"
+                          precision="8" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMGLBA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="RMGLBA" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDMTJ]"
+                          dataType="numeric"
+                          name="RMDMTJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMVDGJ]"
+                          dataType="numeric"
+                          name="RMVDGJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMICU]"
+                          dataType="numeric"
+                          name="RMICU"
+                          precision="8" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMICUT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="RMICUT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMDICJ]"
+                          dataType="numeric"
+                          name="RMDICJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPAAP]"
+                          dataType="numeric"
+                          name="RMPAAP"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMCRCD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="RMCRCD" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMCRRM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMCRRM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMAM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMAM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMVLDT]"
+                          dataType="numeric"
+                          name="RMVLDT"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPYIN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMPYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMISTP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RMISTP" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMCBNK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="RMCBNK" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMBKTR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="RMBKTR" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMTORG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMTORG" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMPID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMPID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMUPMJ]"
+                          dataType="numeric"
+                          name="RMUPMJ"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMUPMT]"
+                          dataType="numeric"
+                          name="RMUPMT"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[RMJOBN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="RMJOBN" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
+                          dataType="dbDate"
+                          name="TransactionDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Processing\StageLoad\Staging Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\Staging Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
+                  endId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]"
+                  name="Derived Column Output"
+                  startId="Package\Data Processing\StageLoad\Add Metadata.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
+                  endId="Package\Data Processing\StageLoad\Add Metadata.Inputs[Derived Column Input]"
+                  name="ODBC Source Output"
+                  startId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output]" />
+                <path
+                  refId="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
+                  endId="Package\Data Processing\StageLoad\Staging Destination.Inputs[OLE DB Destination Input]"
+                  name="Sortie de colonne dérivée"
+                  startId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre-step"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{FA3AAF4D-1088-4329-AA40-C0047F2B1003}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre-step">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Pre-step\Delete Staging Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5C78B8CD-23FC-44AB-B169-3174D0BC6DC8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Staging Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{68DA1430-4604-42B8-8F14-2A561148FB28}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::SQLDeleteTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Pre-step\Get JulianJDEDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8A3046DD-2DEF-45FC-B6C1-30EF34186A8C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get JulianJDEDate"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8A6DAF0E-5EA9-4518-A16E-EDE8F0CC4461}"
+              SQLTask:SqlStatementSource="SELECT ISNULL(JulianJDEDate,0) From [Harsco].[DimDate] WHERE FullDate = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LastUpdatedJulianDate" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::P_LAST_RUN_DT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Pre-step.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B08A84C1-7CFC-4AB3-9D82-A6C734222085}"
+          DTS:From="Package\Pre-step\Delete Staging Table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Pre-step\Get JulianJDEDate" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0F1F07E-432B-42C4-B354-CC65A4BC86B8}"
+      DTS:From="Package\Pre-step"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Processing" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Data Processing\StageLoad"
+          TopLeft="95.75,24.25" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="335,88"
+          Size="335,131"
+          Id="Package\Data Processing"
+          TopLeft="43,332.477272727273" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Pre-step\Delete Staging Table"
+          TopLeft="63,54" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Pre-step\Get JulianJDEDate"
+          TopLeft="68,163.75" />
+        <EdgeLayout
+          Id="Package\Pre-step.PrecedenceConstraints[Constraint]"
+          TopLeft="152,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.75"
+              Start="0,0"
+              End="0,60.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="325,237"
+          Size="325,280"
+          Id="Package\Pre-step"
+          TopLeft="47,7" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="210,287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.477272727273"
+              Start="0,0"
+              End="0,37.977272727273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.977272727273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Processing\StageLoad">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="419,29.1999995970726" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Processing\StageLoad\Staging Destination"
+          TopLeft="687.083333861083,28.5" />
+        <NodeLayout
+          Size="143,41"
+          Id="Package\Data Processing\StageLoad\Add Metadata"
+          TopLeft="242.583333861083,32.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
+          TopLeft="180,53.5999997985363">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.583333861083,0"
+              Start="0,0"
+              End="55.083333861083,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.083333861083,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
+          TopLeft="385.583333861083,51.5999997985363">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.416666138917,0"
+              Start="0,0"
+              End="25.916666138917,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.916666138917,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
+          TopLeft="655,49.8499997985363">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.083333861083,0"
+              Start="0,0"
+              End="24.583333861083,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.583333861083,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\Staging Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

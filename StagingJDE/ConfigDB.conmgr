@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="ConfigDB"
+  DTS:DTSID="{164DC0EF-9E77-4AAF-A8A5-3D76C1D3B6DE}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::ConfigDB_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::ConfigDBPassword]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ConfigDB_ServerName]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::ConfigDBUserName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=HSCUSEA2WSDSSIS;User ID=HarscoAdmin;Initial Catalog=DWConfig;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-SSIS2008R2StagingTemplate-{164DC0EF-9E77-4AAF-A8A5-3D76C1D3B6DE}localhost.DWConfig;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="gm8GsrM8nQ=="
+        p4:IV="QLVz588OXEo=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">fg84xEflJXRjAoLOZKpw84QfYNapCSDui0F1hc7vMQiF4wCQFBvKJiT8Lb1g1wRTFSRj+y9bQ1g89xi7VB5mTjjYYcXf8ju2Vv9Mv12AkN8lGgF6faIGx9y28UfvDdJgimOF1nHqpDzu0VIQ3uLJD2rqmzEqD3cmX3CJ+sWkE/s=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
