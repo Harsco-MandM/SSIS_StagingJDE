@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-DTA-F12092"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{45CE29DF-9D52-4A55-A605-012FBB74E3BC}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{332C566A-58DE-46F3-9089-EB238620B3E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,18 +33,30 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="nQSKsPQ6dQ=="
-            IV="IbN7RYXV494=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="LgqWt8SMPQ=="
+            IV="JSdj4WiFXaA=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>IbN7RYXV496Hjk7vHGJy3RAz6tndUtOz7MsZT5tvUPBDpTasFOpinbC71oqhlEYMcbVksqIiKPOIDVquy6pfUHKQOGpq8MAdPkvZYTPkUJpEZ2Pueft3nVLuctPC8+nwOY88gb4/8DjR3Qe8qFYS+ghiAcX2sa1T</CipherValue>
+              <CipherValue>JSdj4WiFXaAJ3X5Ybm9Tawfo5JCayL2pan7UuMSQXwWdgjo1cENTX/uTpdMrF/VtsWWa4m9LUAjKDwOS+y2p877Qx7MMtiyIyb+bheSN1mRwDu54p3/f2lT3UBqKILayFoZT0jYs52xzVrY/4FZfDa1dhnTsMAOg</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="Log"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Enregistre les entrées du journal pour les événements dans une base de données SQL Server"
+      DTS:DTSID="{F9485B78-C908-42BB-A54E-A7156833E520}"
+      DTS:ObjectName="Module fournisseur d'informations SSIS pour SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -139,6 +151,53 @@ JPDTAFR73.F12092
         DTS:DataType="8">stg.JDE_F1201</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">2,7,OnError,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{F9485B78-C908-42BB-A54E-A7156833E520}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Data Processing"
@@ -149,6 +208,8 @@ JPDTAFR73.F12092
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Processing">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Data Processing\StageLoad"
@@ -1048,6 +1109,8 @@ JPDTAFR73.F12092
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Pre-step\Delete Staging Table"

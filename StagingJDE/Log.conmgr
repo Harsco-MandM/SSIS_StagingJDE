@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Log"
+  DTS:DTSID="{655C5064-7DE4-409E-9FD8-2F5A2B07FC8A}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::SSISDB_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::SSISDB_Password]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SSISDB_ServerName]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::SSISDB_UserName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=HSCUSEA2WSDSSIS;User ID=HarscoAdmin;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="cC0ulVkvOA=="
+        p4:IV="aGPK4WlIuaI=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">/xGVfYnveBA1/luuA+iSh5qd06lIDOnui1Sull97xoxGa+LC8J5Aq8z45M9T/+s7Xyrv3TvtB4cRo2UuJPfQtGqCxFaUk4aw7S+/Gwv4NbQufFCDqzFW+3AMLuxnMlYNf+i/3AQYD15OqQ1RmuhPpxCKUZf56CAePz2vDAkDGdc=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

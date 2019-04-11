@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-DTA-F0911"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="449"
-  DTS:VersionGUID="{7E05E1C5-F83E-49CA-9B5B-274C30B23983}">
+  DTS:VersionBuild="451"
+  DTS:VersionGUID="{68A0F4F2-2A40-4161-955C-054D7D5D765C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="n/rdMDH+Gw=="
-            IV="CaX1JXD0AGk=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="daS+YZMIFg=="
+            IV="Fajvonky0Zs=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>CaX1JXD0AGmQ/JwHE7EkaYUZec89Vd5lQksnRk5Sxy/iZ9FxdKTYu8fscPHybAy4ZJRGpHXaKpixcq6NVfmMdLUvrzo6XT52O4V7A5O3gWt4zQuDWKTpSJJThFry9kOk86h64gqU9rRdfxvRczdkocokjkjt/Pok</CipherValue>
+              <CipherValue>Fajvonky0ZtvK4PluznxHDwF0MbyiYSMskc2csMTltldIr+0hwDIoXiZ1iLZn2wA+JxZLerLHSkET1ZaCaH9YL6vT0SpJ76OYI57SIvplo1rqiL/EJGrD7XTLkDXkuBavB5IkOZZBqFDBzdZRy8IcYFcf6jbOwQU</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -141,7 +141,7 @@ JPDTAFR73.F0911
 
 WHERE
  1=1
-AND GLDGJ &gt;= 116001  
+AND GLDGJ &gt;= 117001  
 AND GLKCO not in ('99999') AND GLUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -543,7 +543,7 @@ JPDTAFR73.F0911
 
 WHERE
  1=1
-AND GLDGJ &gt;= 116001  
+AND GLDGJ &gt;= 117001  
 AND GLKCO not in ('99999') AND GLUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
@@ -4450,6 +4450,8 @@ AND GLKCO not in ('99999') AND GLUPMJ &gt;=0</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Pre-step\Delete Staging Table"

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">YourServer</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="12Uphh3t4Q==" SSIS:IV="VmE6nRTBaRg=">bcua/mIvdtWPaDnYTxsjSSy9sXhOel0Z59MkfnaTeiKBQvqiPxhnHITJRvACZgOPrqDUsZ12jLYYH2oZ7qXGPuPj/AfNct/IZ77cyWThEf38edrqAJHy+Qux5XktYk7D17IUqwp7wg9gOTXjXTznk3o+uI6pp4wtwCqd8d7wTK9HyjbQMDzTgA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="tWz1NQsdew==" SSIS:IV="umuzMf/n9lg=">ABq7PhZxqXAaKFGrUG0JAFw4exavh8CVy9CQf2WZCsbxWW4dZVh+jfbthsqpfUGLpcT85TyD9PN3OgobhsKfr+XIZn83OzLGXG6YlUvyIUO+O4MWSg8rt8KFCo5jOUIAoy/DsAKxV1V5V8kdIrV4R0bkY+2sgUg5J3rGM4J+0jHvLwgECN/QPg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -67,6 +67,7 @@
           <SSIS:ConnectionManager SSIS:Name="DataWarehouse.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Staging.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="JDE.BIEXTRACT.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Log.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -173,6 +174,36 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.Log.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=HSCUSEA2WSDSSIS;User ID=HarscoAdmin;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.Log.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="StagingJDE-DTA-F12092.dtsx">
@@ -181,10 +212,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F12092</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">38</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">39</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{45CE29DF-9D52-4A55-A605-012FBB74E3BC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{332C566A-58DE-46F3-9089-EB238620B3E9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -297,10 +328,10 @@
                 <SSIS:Property SSIS:Name="Name">_StagingJDE-Template</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">399</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">402</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5F0D96B7-B7E9-4A30-BBF6-15BE8B479016}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7B54279D-0453-47D7-BA08-C84617793127}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -414,10 +445,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0010</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">405</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">409</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1F55C673-179C-487C-BA53-440237A491E3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6B1F5861-774C-40C2-A47B-3A3CA2598C2E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -531,10 +562,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0006</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">404</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">407</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F0D8D106-3AD2-4ACF-9796-F3F910F91073}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{773915B9-E470-4716-9C91-909DEAC46414}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -648,10 +679,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0005</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">423</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">429</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4BB4EFCD-5FD1-445B-AA30-1FCD99637A1F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ED293ABE-13DC-46AE-9604-0ACAAC7D4D91}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -765,10 +796,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0901</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">405</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">408</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E5B0125D-2282-4FE8-957B-A76F86935B06}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BFAEE855-EA66-4475-A8E4-B3EB341C7591}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -882,10 +913,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0902</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">418</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">421</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{671C7516-192A-4485-AD2A-03F0327BCBC1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{41829DB0-D761-4F21-B07C-32941671DF4D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -999,10 +1030,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4801</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">408</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">410</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4BAB369E-77A5-4EE5-A949-362620B7F835}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D719B2F2-8823-4547-8C1A-E68854E7005C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1116,10 +1147,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4311</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">425</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">429</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{63379CCF-84FF-4F10-8F2D-F35135A88071}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D69A2A56-DD98-44B6-8EE3-45760FC0EE10}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1233,10 +1264,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F1207</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">409</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">411</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F354B6E2-2037-4BEB-ADEF-B153F919BAC1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{61C1549D-738B-4ACB-A50A-128A99C62B61}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1350,10 +1381,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0014</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">403</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">406</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DD1269DF-B4FB-4EEC-9B8F-094A66F965A8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B9436C36-0D41-45F5-BF02-D503398C2679}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1467,10 +1498,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0101</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">405</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">409</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{EC92501B-322C-4CFE-B95B-0B2511A893D1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{74BC9551-AE1A-4EDD-B96D-75B40A4412C9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1584,10 +1615,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0911</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">447</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">451</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{766508A0-588C-4216-AAAF-1AE36BE33319}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{68A0F4F2-2A40-4161-955C-054D7D5D765C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1701,10 +1732,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0111</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">405</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">407</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E43236D7-E320-43B3-B326-E20BAC63FDE6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{63F44802-2331-45CB-B251-558B39588594}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1818,10 +1849,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0116</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">410</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">412</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{46654298-BAFB-4EFA-82A3-0BB1D7AE8622}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FE4735DD-C3A2-48AC-88D9-757F71B19D1A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1935,10 +1966,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0411</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">407</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">409</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{30994B06-EDC5-4D50-A897-19EAA9D48E2D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4C4D9E84-7167-4F7A-9E9E-8557FBCE85B4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2052,10 +2083,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0413</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">409</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">413</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{94DB8EF2-8470-4A2A-B184-73AEB3A34E32}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3E2B3842-FD1C-4C0E-BAE2-02F8826FE3ED}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2169,10 +2200,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F1307</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">412</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">414</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A407D035-9256-4F6A-A309-C2BAF69FF4B5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{138FA52A-8348-4616-8DEF-7FB085E5DC5F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2286,10 +2317,10 @@
                 <SSIS:Property SSIS:Name="Name">_StagingJDE-Template</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">393</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">395</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{76220D94-0502-4506-ACBD-0B1B22801556}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3BB397BD-02FD-4A7F-8DD7-FC8032063A88}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2402,10 +2433,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F1201</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CA9D4FD5-5672-4ED8-8A5C-B17CA6E48456}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CC4F51B4-323E-4431-8378-B56E7B408699}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2519,10 +2550,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F1202</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">392</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">395</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6C1784AE-8D89-4E1A-BCC6-E362D917158F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2B82858C-90F1-49D3-BFBA-81E6B2F153AD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2635,10 +2666,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F48092</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">413</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">415</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9309916E-57A6-4480-B863-9BE3F4FC92D7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5DA99A4B-1625-4FCF-89A9-1F0D294F7CDD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2752,10 +2783,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4111</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">420</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">422</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{38ED5E2C-A244-4EA6-8B97-25327F456BB6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DCEB21EF-4025-49EF-934C-197CA6052AAA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2869,10 +2900,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4105</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">414</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">418</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DD52CEA5-55C7-4CFB-99A5-D4F5745DE6DB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{67DCFFEA-0934-47F4-9AF9-9D74219E44AE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2986,10 +3017,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4101</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">417</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">419</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3EE62A97-6FC2-43BB-85AA-441FC38CB999}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FCA34ED7-6461-4C0B-9533-9665D6E3AD18}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3103,10 +3134,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F41021</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">417</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">419</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A7C473AD-8D1C-4535-8875-7B72AC212F07}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4E1D7661-FFF1-44DC-8C84-1BDFE6104BC6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3220,10 +3251,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4101D</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">418</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">420</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AAC1EEAB-D0A6-4295-995A-FCFA3405E4EA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C874904D-91E9-4615-BAB7-3C123545AC27}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3337,10 +3368,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F41002</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">416</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">418</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DDAFD55E-3DA0-4275-9B3F-9937E67ED75F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{112A582D-5859-490D-818C-F6A06EC38727}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3454,10 +3485,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F4102</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">418</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">420</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D236692E-7E1C-4106-BEC8-79BE8A36AB6D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7C287D60-CE51-4C0F-905A-2CAA1BE5F7C2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3571,10 +3602,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F00141</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">419</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">421</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A410A1C8-D2D3-4181-9C27-523F101EC51D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FD1D19A1-6B12-4E38-B9C5-794E3ADE87DB}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3688,10 +3719,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F00142</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">422</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">424</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{91278D4B-5464-44C1-B6CF-6BEAC5BBC2E0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3ACACE5E-8887-4489-A3C6-05FC7A8DE1A9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3762,10 +3793,10 @@
                 <SSIS:Property SSIS:Name="Name">StagingJDE-DTA-F0050</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">418</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">421</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{17B0C5D1-4B87-41FE-A7C6-D6A20493E84A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EBBC5A43-8424-4159-9F80-4AF5CB364AEA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

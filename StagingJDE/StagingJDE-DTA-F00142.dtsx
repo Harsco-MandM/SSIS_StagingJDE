@@ -12,13 +12,13 @@
   DTS:ObjectName="StagingJDE-DTA-F00142"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="422"
-  DTS:VersionGUID="{91278D4B-5464-44C1-B6CF-6BEAC5BBC2E0}">
+  DTS:VersionBuild="424"
+  DTS:VersionGUID="{3ACACE5E-8887-4489-A3C6-05FC7A8DE1A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
     <DTS:LogProvider
-      DTS:ConfigString="{9042B986-3BF3-40DC-A170-F5675B1C3396}"
+      DTS:ConfigString="Log"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
       DTS:DTSID="{995C4610-F2E3-4C84-A490-30103915AE5F}"
@@ -952,6 +952,8 @@ JPDTAFR73.F00142</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Pre-step\Delete Staging Table"

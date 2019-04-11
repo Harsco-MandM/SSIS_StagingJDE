@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-DTA-F0101"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="408"
-  DTS:VersionGUID="{85418640-27B2-46BF-9163-D230458CE136}">
+  DTS:VersionBuild="409"
+  DTS:VersionGUID="{74BC9551-AE1A-4EDD-B96D-75B40A4412C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="J9dpjJne2g=="
-            IV="/5pG0ewDzPk=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="7NuOBw0Q/w=="
+            IV="wz/A9dFCbFQ=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>/5pG0ewDzPnu3vTgBwZzGd/M99xn4Ct6gxoU7JoJt3vEfP3JBgYpRVqTpbXyvTh/9WUZcewj0p9851q0mZSHZCfXLT4USHaIQvbiEcm97EUotdpKla9QAwxVH4vE01ErVzIBusEiqN3eLXG43tZMXLByEsbvm0XH</CipherValue>
+              <CipherValue>wz/A9dFCbFRv5JsHxbf6ECRcSaIvAK4bZiwBwFSlBlkf0DdIS5qhJo1RWjdytjs4qg7Kfc9weS6hAgRIVUsaXJlJvbXJlN3RJIwk8Zl59Uq3K74mGLfx905+P/RIXv65cw3j4wibjDi4hlEMV1f0s5ZEkJOAvxmI</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -3500,6 +3500,8 @@ WHERE
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Pre-step\Delete Staging Table"
