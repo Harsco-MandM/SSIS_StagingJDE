@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="JDE.BIEXTRACT"
+  DTS:DTSID="{691E482F-A880-4836-97C5-2E23E4F0BF05}"
+  DTS:CreationName="ODBC">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::JDEConnectionString]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::JDEPassword]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::JDEUserName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
+      <DTS:Password
+        DTS:Name="Pwd"
+        Sensitive="1"
+        p4:Salt="PSzk8+xegA=="
+        p4:IV="/7mF4agEV5g=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">e9RKqILPQBtBhAUqz3/V/dnTt/j3PikmfoYgYeJId9U7JXWNEa3arBM9zQZ/FcT+Ob5gcgAhiSK+wbUA22aMzoa3hLktrhnjhF7nCukgIQtuXp3KDoSVTodugNJ7a18LjvXvZOSleSskI/xSwLcYNSd9GgGEQ3tX</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

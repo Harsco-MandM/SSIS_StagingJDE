@@ -12,42 +12,13 @@
   DTS:ObjectName="StagingJDE-DTA-F00142"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="421"
-  DTS:VersionGUID="{272C4FC4-A316-48C6-A26C-19057D5454E3}">
+  DTS:VersionBuild="422"
+  DTS:VersionGUID="{91278D4B-5464-44C1-B6CF-6BEAC5BBC2E0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[JDE.BIEXTRACT]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{691E482F-A880-4836-97C5-2E23E4F0BF05}"
-      DTS:ObjectName="JDE.BIEXTRACT">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::JDEConnectionString]</DTS:PropertyExpression>
-      <DTS:PropertyExpression
-        DTS:Name="Password">@[$Project::JDEPassword]</DTS:PropertyExpression>
-      <DTS:PropertyExpression
-        DTS:Name="UserName">@[$Project::JDEUserName]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
-          <EncryptedData
-            Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Q7ydRbhYgA=="
-            IV="qsn5/amea64=" xmlns="http://www.w3.org/2001/04/xmlenc#">
-            <EncryptionMethod
-              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
-            <CipherData>
-              <CipherValue>qsn5/amea677WaES/DcQUpwdoj4AYNRDOWMWLYudoc6WOBAD+K7Z0Ef87SCcaUm/TiWaYeSrXboaq3OmiHQi1D53M2d6ThO3WeyzQmIcTaD92ei4n2w/MayAMf1YJ/wjWxU5E6RS9LBGdxIn9ueY7VcZMW3pDpWX</CipherValue>
-            </CipherData>
-          </EncryptedData>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
-      DTS:ConfigString="Log"
+      DTS:ConfigString="{9042B986-3BF3-40DC-A170-F5675B1C3396}"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
       DTS:DTSID="{995C4610-F2E3-4C84-A490-30103915AE5F}"
@@ -475,8 +446,8 @@ JPDTAFR73.F00142</property>
                   <connections>
                     <connection
                       refId="Package\Data Processing\StageLoad\ODBC Source.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[JDE.BIEXTRACT]"
-                      connectionManagerRefId="Package.ConnectionManagers[JDE.BIEXTRACT]"
+                      connectionManagerID="{691E482F-A880-4836-97C5-2E23E4F0BF05}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[JDE.BIEXTRACT]"
                       description="The ODBC runtime connection"
                       name="ODBCConnection" />
                   </connections>
@@ -1149,13 +1120,13 @@ JPDTAFR73.F00142</property>
           Id="Package\Data Processing\StageLoad\ODBC Source"
           TopLeft="38,33.1999995970726" />
         <NodeLayout
-          Size="143,41"
-          Id="Package\Data Processing\StageLoad\Add Metadata"
-          TopLeft="242.583333861083,32.5" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Data Processing\StageLoad\Staging Destination"
           TopLeft="686.083333861083,28.5" />
+        <NodeLayout
+          Size="143,41"
+          Id="Package\Data Processing\StageLoad\Add Metadata"
+          TopLeft="242.583333861083,32.5" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
           TopLeft="182,53.5999997985363">
