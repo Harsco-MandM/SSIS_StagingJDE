@@ -1,26 +1,26 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/25/2014 8:49:04 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="W2K8R2-SQL2K8R2"
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
-  DTS:DTSID="{983A8985-36BD-46DF-B4C6-3BF5502F5BEF}"
+  DTS:DTSID="{EB7219B1-F669-4BDF-B63E-6C83167845D6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="1033"
-  DTS:ObjectName="_StagingJDE-Template"
+  DTS:ObjectName="StagingJDE-F0005"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="484"
-  DTS:VersionGUID="{AA25DD5D-7447-4023-B490-89A94527C7FE}">
+  DTS:VersionBuild="483"
+  DTS:VersionGUID="{FB825F76-27B9-4C49-9775-5EB3808D8866}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JDE.BIEXTRACT]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{D5FBC8AD-D171-469E-942F-A7EFBC5DF27D}"
+      DTS:DTSID="{D1DDB9B3-94B8-4CCE-805B-E3268E6B6F73}"
       DTS:ObjectName="JDE.BIEXTRACT">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::JDEConnectionString]</DTS:PropertyExpression>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="q7JqWYRWtw=="
-            IV="5jAqe8+BZpE=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="eBZJ1ihNyA=="
+            IV="zEzJU+Vt1Dw=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>5jAqe8+BZpH88dUHrBMjAQ7BALtwLWsTJqrefuYz/XFaPa1JM2sv0uUTraVDAAt5d0AKqMQBmICYuKXuB+dpMR+8dfTl6FxxkhDbUA30MtEkoVV9wl3f7qtxja877D0X2n+gf8ua2MVlNpPky6R+YGLD6q/6w3Lc</CipherValue>
+              <CipherValue>zEzJU+Vt1DyNJCK8KlhtE1kpRsb/WFRtuHXHu9MuGAKBZRC67Xp4YZVR4M0aAO1EJe9onEh09HnUeLfdVzQX4V9LKD9aRC+KNuxapbtSVQocoZ1VwcBYf9D0YH4oCcgMOmQDjStgtRJ/KEuLQQlxqLZlBkFgbiOA</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,7 +50,7 @@
       DTS:ConfigString="Log"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
-      DTS:DTSID="{C7F310CF-DB49-4F18-AA95-B5E818D92BA9}"
+      DTS:DTSID="{FF38B245-E2F6-4983-9F42-17400579ADDD}"
       DTS:ObjectName="SSIS log provider for SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -61,7 +61,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{BDE3ADB2-17FE-486D-98E4-B0B053A07C47}"
+      DTS:DTSID="{3E7EB95D-C230-456B-91E8-0AA89065259E}"
       DTS:ObjectName="P_COM_LIB">
       <DTS:Property
         DTS:DataType="8"
@@ -70,7 +70,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{7F78001D-48B2-439E-84F3-F7367B71C98C}"
+      DTS:DTSID="{104AF95F-D3FB-43F6-B3A2-F698AF595981}"
       DTS:ObjectName="P_DTA_LIB">
       <DTS:Property
         DTS:DataType="8"
@@ -79,7 +79,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{58E61978-9F05-4ADD-B220-27B15D28CBBF}"
+      DTS:DTSID="{6A3962AD-042D-4CE2-B19E-4C897925779D}"
       DTS:ObjectName="P_LAST_RUN_DT">
       <DTS:Property
         DTS:DataType="8"
@@ -88,7 +88,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{C9BCDEC4-01B1-4F48-8F56-164ADE173D79}"
+      DTS:DTSID="{27E92A95-5414-4E12-A4A3-53B4AE5842C0}"
       DTS:ObjectName="P_SOURCE_SYSTEM_ID">
       <DTS:Property
         DTS:DataType="8"
@@ -98,7 +98,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3AB8E971-38F7-438C-BDAD-953147149FD6}"
+      DTS:DTSID="{CEE2577A-27BC-4311-A860-9EE2BD4A3AE0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastUpdatedJulianDate">
@@ -107,7 +107,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{40883CED-7929-4198-A158-6653FE9C85E0}"
+      DTS:DTSID="{591E85CD-E601-42C3-99CA-122C906021AE}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DELETE FROM &quot; +  @[User::StagingTableName] +&#xA;&quot; WITH (ROWLOCK) WHERE UniqueKey = ? &quot;"
       DTS:IncludeInDebugDump="2345"
@@ -118,7 +118,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0740047A-69A5-4374-801A-B364968437E4}"
+      DTS:DTSID="{6F1EAEC9-990A-416D-BB18-30277A9E6C22}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_COM_LIB] &#xA; + &quot;.F0005  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND DRUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
@@ -138,7 +138,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{251F694E-879E-406B-BF07-66CD106D3DFE}"
+      DTS:DTSID="{688DF679-0D44-486A-9850-0385E3A0EF66}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT UniqueKey FROM  &quot; +  @[User::StagingTableName] +&#xA;&quot; WHERE SourceSystemID = '&quot; + @[$Package::P_SOURCE_SYSTEM_ID] + &quot;' &quot;"
       DTS:IncludeInDebugDump="2345"
@@ -149,7 +149,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EF6DF79A-A77A-410B-9AB4-CF8A25D557A0}"
+      DTS:DTSID="{9C101489-5137-447E-9BDD-10A19C65EADB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="StagingTableName">
@@ -201,7 +201,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{C7F310CF-DB49-4F18-AA95-B5E818D92BA9}" />
+        DTS:InstanceID="{FF38B245-E2F6-4983-9F42-17400579ADDD}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -209,7 +209,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
       DTS:refId="Package\Data Processing"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{4F0CB6DC-E86C-4507-9627-5EC9D3D2D6C3}"
+      DTS:DTSID="{8245F17D-F441-4F5A-B7C2-3CDEF5F84604}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Processing">
@@ -221,7 +221,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
           DTS:refId="Package\Data Processing\StageLoad"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{35BF5AD2-E3FC-4CAA-9655-BA13A9DB1036}"
+          DTS:DTSID="{1D910F56-9991-4575-B08A-F4EA7045DA37}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="StageLoad"
@@ -2087,7 +2087,7 @@ where [refTable].[UniqueKey] = ?</property>
       DTS:refId="Package\Pre-step"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{94B3BDFA-682B-4A97-A903-ABAC65BC4256}"
+      DTS:DTSID="{3D581BE0-7D81-4290-BEE5-6709F81F5584}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
@@ -2099,7 +2099,7 @@ where [refTable].[UniqueKey] = ?</property>
           DTS:refId="Package\Pre-step\Get JulianJDEDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2CC63813-9AA6-4049-BFB4-43DCD825A15D}"
+          DTS:DTSID="{C7D2FA2D-8AF8-4A13-9450-0BF42C190A80}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get JulianJDEDate"
@@ -2131,7 +2131,7 @@ where [refTable].[UniqueKey] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{FADCA4A7-0942-4FB1-82B5-15719FD9A63D}"
+      DTS:DTSID="{B6FE930C-E9E4-4718-AB85-43E626F1581B}"
       DTS:From="Package\Pre-step"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2159,32 +2159,32 @@ where [refTable].[UniqueKey] = ?</property>
           PanelSize="335,121"
           Size="335,164"
           Id="Package\Data Processing"
-          TopLeft="124,272.477272727273" />
+          TopLeft="121,372.477272727273" />
         <NodeLayout
           Size="167,42"
           Id="Package\Pre-step\Get JulianJDEDate"
-          TopLeft="76,30.75" />
+          TopLeft="73,106.75" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="325,126"
-          Size="325,169"
+          PanelSize="325,280"
+          Size="325,323"
           Id="Package\Pre-step"
-          TopLeft="128,49.75" />
+          TopLeft="125,7" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="291,218.75">
+          TopLeft="288,330">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.727272727273"
+              EndConnector="0,42.477272727273"
               Start="0,0"
-              End="0,46.227272727273">
+              End="0,34.977272727273">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.227272727273" />
+                    End="0,34.977272727273" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2204,38 +2204,38 @@ where [refTable].[UniqueKey] = ?</property>
         <NodeLayout
           Size="155,42"
           Id="Package\Data Processing\StageLoad\Conditional Split"
-          TopLeft="282,433" />
+          TopLeft="585,272" />
         <NodeLayout
           Size="236,42"
           Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="245,201" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Data Processing\StageLoad\Insert New Rows"
-          TopLeft="160.083333861083,612.5" />
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="296,37.1999995970726" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Data Processing\StageLoad\Delete Matching Rows"
-          TopLeft="414,614" />
+          TopLeft="548,40" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
-          TopLeft="416,714" />
+          TopLeft="727,553" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Data Processing\StageLoad\Delete Matching Rows"
+          TopLeft="717,453" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Processing\StageLoad\Insert New Rows"
+          TopLeft="463.083333861083,451.5" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
-          TopLeft="289.583333861083,121.5" />
+          TopLeft="299.583333861083,34.5" />
         <NodeLayout
           Size="170,42"
           Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="273,303" />
+          TopLeft="576,142" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="358.75,345">
+          TopLeft="661.75,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2259,7 +2259,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de commande OLE DB]"
-          TopLeft="502.25,656">
+          TopLeft="809.25,495">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2281,7 +2281,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
-          TopLeft="360.5,243">
+          TopLeft="663.5,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2303,18 +2303,18 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
-          TopLeft="363.541666930542,79.1999995970726">
+          TopLeft="180,54.8499997985363">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.3000004029274"
+              EndConnector="119.583333861083,0"
               Start="0,0"
-              End="0,34.8000004029274">
+              End="112.083333861083,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8000004029274" />
+                    End="112.083333861083,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2325,7 +2325,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[INSERT]"
-          TopLeft="335,475">
+          TopLeft="638,314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2361,18 +2361,18 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
-          TopLeft="361.541666930542,163.5">
+          TopLeft="440.583333861083,58.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.5"
+              EndConnector="107.416666138917,0"
               Start="0,0"
-              End="0,30">
+              End="99.916666138917,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30" />
+                    End="99.916666138917,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2383,7 +2383,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[DELETE]"
-          TopLeft="384,475">
+          TopLeft="687,314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2394,17 +2394,17 @@ where [refTable].[UniqueKey] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4521072796936" />
+                    End="0,52.4521072796935" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.4521072796936"
-                    Point2="0,56.4521072796936"
-                    Point3="4,56.4521072796936" />
+                    Point1="0,52.4521072796935"
+                    Point2="0,56.4521072796935"
+                    Point3="4,56.4521072796935" />
                   <mssgle:LineSegment
-                    End="117.5,56.4521072796936" />
+                    End="117.5,56.4521072796935" />
                   <mssgle:CubicBezierSegment
-                    Point1="117.5,56.4521072796936"
-                    Point2="121.5,56.4521072796936"
-                    Point3="121.5,60.4521072796936" />
+                    Point1="117.5,56.4521072796935"
+                    Point2="121.5,56.4521072796935"
+                    Point3="121.5,60.4521072796935" />
                   <mssgle:LineSegment
                     End="121.5,131.5" />
                 </mssgle:SegmentCollection>
@@ -2413,7 +2413,7 @@ where [refTable].[UniqueKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="43.06705078125,61.4521072796936,35.3658984375,9.2705078125"
+              BoundingBox="43.06705078125,61.4521072796935,35.3658984375,9.2705078125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2421,7 +2421,7 @@ where [refTable].[UniqueKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
+    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2442,7 +2442,7 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
+    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

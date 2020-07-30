@@ -5,22 +5,22 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="W2K8R2-SQL2K8R2"
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
-  DTS:DTSID="{983A8985-36BD-46DF-B4C6-3BF5502F5BEF}"
+  DTS:DTSID="{6613C7A1-CC20-4A38-9F22-979094BBCA90}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="1033"
-  DTS:ObjectName="_StagingJDE-Template"
+  DTS:ObjectName="StagingJDE-F0005"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="484"
-  DTS:VersionGUID="{AA25DD5D-7447-4023-B490-89A94527C7FE}">
+  DTS:VersionBuild="485"
+  DTS:VersionGUID="{54E1A105-63E2-44E2-9358-62108D5F8FAB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JDE.BIEXTRACT]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{D5FBC8AD-D171-469E-942F-A7EFBC5DF27D}"
+      DTS:DTSID="{F2751307-5078-49B2-BE07-75A1A71AB94F}"
       DTS:ObjectName="JDE.BIEXTRACT">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::JDEConnectionString]</DTS:PropertyExpression>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="q7JqWYRWtw=="
-            IV="5jAqe8+BZpE=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="DTQYS4yWoA=="
+            IV="w5uF37l7OTU=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>5jAqe8+BZpH88dUHrBMjAQ7BALtwLWsTJqrefuYz/XFaPa1JM2sv0uUTraVDAAt5d0AKqMQBmICYuKXuB+dpMR+8dfTl6FxxkhDbUA30MtEkoVV9wl3f7qtxja877D0X2n+gf8ua2MVlNpPky6R+YGLD6q/6w3Lc</CipherValue>
+              <CipherValue>w5uF37l7OTWDrQTshQByXiN6/DQpYcaAPmJHOyhP46S/GDhgMoGH7S2SYXDSdALyhD8NlUX44rRwgwHkBHABZWzRvgb6jYowlRbaKzN3caQXeTMXzFTcJXgH/QWk4LcriQuuvkvZHsn17ZgzxulBYxadvpWnaolw</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,7 +50,7 @@
       DTS:ConfigString="Log"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
-      DTS:DTSID="{C7F310CF-DB49-4F18-AA95-B5E818D92BA9}"
+      DTS:DTSID="{03005AA9-3562-44DF-8144-74BE57A95AF1}"
       DTS:ObjectName="SSIS log provider for SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -61,7 +61,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{BDE3ADB2-17FE-486D-98E4-B0B053A07C47}"
+      DTS:DTSID="{94734B8A-9BD1-44AA-A44A-52BA9EF61944}"
       DTS:ObjectName="P_COM_LIB">
       <DTS:Property
         DTS:DataType="8"
@@ -70,7 +70,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{7F78001D-48B2-439E-84F3-F7367B71C98C}"
+      DTS:DTSID="{940ECE0C-5EC6-4EAA-9301-750ECAD02667}"
       DTS:ObjectName="P_DTA_LIB">
       <DTS:Property
         DTS:DataType="8"
@@ -79,7 +79,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{58E61978-9F05-4ADD-B220-27B15D28CBBF}"
+      DTS:DTSID="{31C2F519-A04B-40A8-BCDA-5950E66E35BD}"
       DTS:ObjectName="P_LAST_RUN_DT">
       <DTS:Property
         DTS:DataType="8"
@@ -88,7 +88,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{C9BCDEC4-01B1-4F48-8F56-164ADE173D79}"
+      DTS:DTSID="{EAB3264A-EB01-4447-A847-18E22874B6CD}"
       DTS:ObjectName="P_SOURCE_SYSTEM_ID">
       <DTS:Property
         DTS:DataType="8"
@@ -98,7 +98,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3AB8E971-38F7-438C-BDAD-953147149FD6}"
+      DTS:DTSID="{5B252DB2-EB9A-4686-BF92-DD8884825E59}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastUpdatedJulianDate">
@@ -107,20 +107,20 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{40883CED-7929-4198-A158-6653FE9C85E0}"
+      DTS:DTSID="{B1BF1125-E2AF-4106-A533-0E8CB34D7073}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DELETE FROM &quot; +  @[User::StagingTableName] +&#xA;&quot; WITH (ROWLOCK) WHERE UniqueKey = ? &quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLDeleteTable">
       <DTS:VariableValue
-        DTS:DataType="8">DELETE FROM StagingJDE.F0005 WITH (ROWLOCK) WHERE UniqueKey = ? </DTS:VariableValue>
+        DTS:DataType="8">DELETE FROM StagingJDE.F0012 WITH (ROWLOCK) WHERE UniqueKey = ? </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0740047A-69A5-4374-801A-B364968437E4}"
+      DTS:DTSID="{DB55623E-3B1C-43BE-8C62-C4DA83E451B3}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_COM_LIB] &#xA; + &quot;.F0005  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND DRUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0012  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND KGUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -130,31 +130,31 @@
  
 
 FROM 
-JPCOMFR73.F0005  
+JPDTAFR73.F0012  
 WHERE
  1=1
  
-AND DRUPMJ &gt;=0</DTS:VariableValue>
+AND KGUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{251F694E-879E-406B-BF07-66CD106D3DFE}"
+      DTS:DTSID="{A2200CE5-846E-4773-9E16-8D37713562C1}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT UniqueKey FROM  &quot; +  @[User::StagingTableName] +&#xA;&quot; WHERE SourceSystemID = '&quot; + @[$Package::P_SOURCE_SYSTEM_ID] + &quot;' &quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLLookup">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT UniqueKey FROM  StagingJDE.F0005 WHERE SourceSystemID = '63' </DTS:VariableValue>
+        DTS:DataType="8">SELECT UniqueKey FROM  StagingJDE.F0012 WHERE SourceSystemID = '63' </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EF6DF79A-A77A-410B-9AB4-CF8A25D557A0}"
+      DTS:DTSID="{103D5B00-880A-4793-888A-B19338B012F0}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="StagingTableName">
       <DTS:VariableValue
-        DTS:DataType="8">StagingJDE.F0005</DTS:VariableValue>
+        DTS:DataType="8">StagingJDE.F0012</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -201,7 +201,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{C7F310CF-DB49-4F18-AA95-B5E818D92BA9}" />
+        DTS:InstanceID="{03005AA9-3562-44DF-8144-74BE57A95AF1}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -209,7 +209,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
       DTS:refId="Package\Data Processing"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{4F0CB6DC-E86C-4507-9627-5EC9D3D2D6C3}"
+      DTS:DTSID="{BEF3246D-DD40-45B9-AD07-B3CCC5379A84}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Processing">
@@ -221,7 +221,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
           DTS:refId="Package\Data Processing\StageLoad"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{35BF5AD2-E3FC-4CAA-9655-BA13A9DB1036}"
+          DTS:DTSID="{77D2DE3A-40DB-4F29-86C2-EC7F325C3594}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="StageLoad"
@@ -261,32 +261,25 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[KGITEM]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="4"
-                          cachedName="DRSY"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSY]" />
+                          cachedLength="6"
+                          cachedName="KGITEM"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGITEM]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[DRRT]"
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[KGCO]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="2"
-                          cachedName="DRRT"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRRT]" />
+                          cachedLength="5"
+                          cachedName="KGCO"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGCO]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[DRKY]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRKY"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRKY]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[KGUPMJ]"
                           cachedDataType="numeric"
-                          cachedName="DRUPMJ"
+                          cachedName="KGUPMJ"
                           cachedPrecision="6"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMJ]" />
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMJ]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -428,13 +421,13 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMJ]}</property>
+                              name="Expression">#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMJ]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">DRUPMJ</property>
+                              name="FriendlyExpression">KGUPMJ</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -442,7 +435,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="47"
+                          length="32"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -451,13 +444,13 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSY]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRRT]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRKY]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGITEM]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGCO]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)DRSY + (DT_STR,15,1252)DRRT + (DT_STR,15,1252)DRKY</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)KGITEM + (DT_STR,15,1252)KGCO</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -596,7 +589,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                       description="Commande SQL à exécuter."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">DELETE FROM StagingJDE.F0005 WITH (ROWLOCK) WHERE UniqueKey = ? </property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">DELETE FROM StagingJDE.F0012 WITH (ROWLOCK) WHERE UniqueKey = ? </property>
                     <property
                       dataType="System.Int32"
                       description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
@@ -791,112 +784,168 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="47"
+                          cachedLength="32"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGITEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="KGITEM"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGITEM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGITEM]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGCO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="KGCO"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGCO]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGCO]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGMCU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="12"
+                          cachedName="KGMCU"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGMCU]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMCU]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGOBJ]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="KGOBJ"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGOBJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOBJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGSUB]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="KGSUB"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSUB]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSUB]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGDL01]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL01"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL01]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL01]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGDL02]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL02"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL02]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL02]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGDL03]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL03"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL03]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL03]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGDL04]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL04"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL04]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL04]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGDL05]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL05"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL05]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL05]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGMOPT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="KGMOPT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGMOPT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMOPT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGOOPT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="KGOOPT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGOOPT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOOPT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGSOPT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="KGSOPT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSOPT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSOPT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGSY]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="4"
-                          cachedName="DRSY"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRSY]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSY]" />
+                          cachedName="KGSY"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSY]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSY]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRRT]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="2"
-                          cachedName="DRRT"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRRT]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRRT]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRKY]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRKY"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRKY]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRKY]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRDL01]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="DRDL01"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRDL01]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL01]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRDL02]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="DRDL02"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRDL02]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL02]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRSPHD]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRSPHD"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRSPHD]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSPHD]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRUDCO]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="DRUDCO"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUDCO]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUDCO]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRHRDC]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="DRHRDC"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRHRDC]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRHRDC]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRUSER]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRUSER"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUSER]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUSER]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRPID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRPID"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRPID]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRPID]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGSEQN]"
                           cachedDataType="numeric"
-                          cachedName="DRUPMJ"
-                          cachedPrecision="6"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMJ]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMJ]" />
+                          cachedName="KGSEQN"
+                          cachedPrecision="7"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSEQN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSEQN]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGUSER]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="10"
-                          cachedName="DRJOBN"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRJOBN]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRJOBN]" />
+                          cachedName="KGUSER"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGUSER]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUSER]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGPID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="KGPID"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGPID]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGPID]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGUPMJ]"
                           cachedDataType="numeric"
-                          cachedName="DRUPMT"
+                          cachedName="KGUPMJ"
                           cachedPrecision="6"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMT]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMT]" />
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGJOBN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="KGJOBN"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGJOBN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGJOBN]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[KGUPMT]"
+                          cachedDataType="numeric"
+                          cachedName="KGUPMT"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMT]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -922,8 +971,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                           name="JDEDATLibrary" />
                         <externalMetadataColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemID]"
-                          dataType="wstr"
-                          length="2"
+                          dataType="i4"
                           name="SourceSystemID" />
                         <externalMetadataColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
@@ -935,80 +983,122 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                           length="100"
                           name="UniqueKey" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGITEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="KGITEM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="KGCO" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGMCU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          name="KGMCU" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGOBJ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="KGOBJ" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSUB]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="KGSUB" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL01]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL01" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL02]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL02" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL03]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL03" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL04]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL04" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGDL05]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL05" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGMOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGMOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGOOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGOOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGSOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSY]"
                           codePage="1252"
                           dataType="str"
                           length="4"
-                          name="DRSY" />
+                          name="KGSY" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRRT]"
-                          codePage="1252"
-                          dataType="str"
-                          length="2"
-                          name="DRRT" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRKY]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRKY" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRDL01]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="DRDL01" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRDL02]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="DRDL02" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRSPHD]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRSPHD" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUDCO]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="DRUDCO" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRHRDC]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="DRHRDC" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUSER]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRUSER" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRPID]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRPID" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGSEQN]"
                           dataType="numeric"
-                          name="DRUPMJ"
+                          name="KGSEQN"
+                          precision="7"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="KGUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGPID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="KGPID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMJ]"
+                          dataType="numeric"
+                          name="KGUPMJ"
                           precision="6" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGJOBN]"
                           codePage="1252"
                           dataType="str"
                           length="10"
-                          name="DRJOBN" />
+                          name="KGJOBN" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMT]"
                           dataType="numeric"
-                          name="DRUPMT"
+                          name="KGUPMT"
                           precision="6" />
                       </externalMetadataColumns>
                     </input>
@@ -1154,112 +1244,168 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="47"
+                          cachedLength="32"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGITEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="KGITEM"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGITEM]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGITEM]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGCO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="KGCO"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGCO]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGCO]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGMCU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="12"
+                          cachedName="KGMCU"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGMCU]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMCU]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGOBJ]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="KGOBJ"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGOBJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOBJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGSUB]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="KGSUB"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSUB]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSUB]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGDL01]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL01"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL01]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL01]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGDL02]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL02"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL02]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL02]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGDL03]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL03"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL03]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL03]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGDL04]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL04"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL04]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL04]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGDL05]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="KGDL05"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL05]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL05]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGMOPT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="KGMOPT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGMOPT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMOPT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGOOPT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="KGOOPT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGOOPT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOOPT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGSOPT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="KGSOPT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSOPT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSOPT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGSY]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="4"
-                          cachedName="DRSY"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRSY]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSY]" />
+                          cachedName="KGSY"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSY]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSY]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRRT]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="2"
-                          cachedName="DRRT"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRRT]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRRT]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRKY]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRKY"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRKY]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRKY]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRDL01]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="DRDL01"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRDL01]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL01]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRDL02]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="DRDL02"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRDL02]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL02]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRSPHD]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRSPHD"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRSPHD]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSPHD]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRUDCO]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="DRUDCO"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUDCO]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUDCO]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRHRDC]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="DRHRDC"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRHRDC]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRHRDC]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRUSER]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRUSER"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUSER]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUSER]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRPID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="DRPID"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRPID]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRPID]" />
-                        <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGSEQN]"
                           cachedDataType="numeric"
-                          cachedName="DRUPMJ"
-                          cachedPrecision="6"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMJ]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMJ]" />
+                          cachedName="KGSEQN"
+                          cachedPrecision="7"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSEQN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSEQN]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGUSER]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="10"
-                          cachedName="DRJOBN"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRJOBN]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRJOBN]" />
+                          cachedName="KGUSER"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGUSER]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUSER]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGPID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="KGPID"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGPID]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGPID]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGUPMJ]"
                           cachedDataType="numeric"
-                          cachedName="DRUPMT"
+                          cachedName="KGUPMJ"
                           cachedPrecision="6"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMT]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMT]" />
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGJOBN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="KGJOBN"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGJOBN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGJOBN]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[KGUPMT]"
+                          cachedDataType="numeric"
+                          cachedName="KGUPMT"
+                          cachedPrecision="6"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMT]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1285,8 +1431,7 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                           name="JDEDATLibrary" />
                         <externalMetadataColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemID]"
-                          dataType="wstr"
-                          length="2"
+                          dataType="i4"
                           name="SourceSystemID" />
                         <externalMetadataColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
@@ -1298,80 +1443,122 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
                           length="100"
                           name="UniqueKey" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGITEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="KGITEM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="KGCO" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGMCU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          name="KGMCU" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGOBJ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="KGOBJ" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSUB]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="KGSUB" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL01]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL01" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL02]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL02" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL03]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL03" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL04]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL04" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGDL05]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL05" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGMOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGMOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGOOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGOOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGSOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSY]"
                           codePage="1252"
                           dataType="str"
                           length="4"
-                          name="DRSY" />
+                          name="KGSY" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRRT]"
-                          codePage="1252"
-                          dataType="str"
-                          length="2"
-                          name="DRRT" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRKY]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRKY" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRDL01]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="DRDL01" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRDL02]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="DRDL02" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRSPHD]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRSPHD" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUDCO]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="DRUDCO" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRHRDC]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="DRHRDC" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUSER]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRUSER" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRPID]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRPID" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGSEQN]"
                           dataType="numeric"
-                          name="DRUPMJ"
+                          name="KGSEQN"
+                          precision="7"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="KGUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGPID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="KGPID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMJ]"
+                          dataType="numeric"
+                          name="KGUPMJ"
                           precision="6" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGJOBN]"
                           codePage="1252"
                           dataType="str"
                           length="10"
-                          name="DRJOBN" />
+                          name="KGJOBN" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[KGUPMT]"
                           dataType="numeric"
-                          name="DRUPMT"
+                          name="KGUPMT"
                           precision="6" />
                       </externalMetadataColumns>
                     </input>
@@ -1504,11 +1691,11 @@ AND DRUPMJ &gt;=0</DTS:VariableValue>
  
 
 FROM 
-JPCOMFR73.F0005  
+JPDTAFR73.F0012  
 WHERE
  1=1
  
-AND DRUPMJ &gt;=0</property>
+AND KGUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -1574,185 +1761,283 @@ AND DRUPMJ &gt;=0</property>
                       truncationRowDisposition="FailComponent">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGITEM]"
                           codePage="1252"
                           dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRSY]"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGITEM]"
+                          length="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGITEM]"
+                          name="KGITEM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGCO]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGCO]"
+                          length="5"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGCO]"
+                          name="KGCO" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMCU]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGMCU]"
+                          length="12"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMCU]"
+                          name="KGMCU" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOBJ]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGOBJ]"
+                          length="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOBJ]"
+                          name="KGOBJ" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSUB]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSUB]"
+                          length="8"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSUB]"
+                          name="KGSUB" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL01]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL01]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL01]"
+                          name="KGDL01" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL02]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL02]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL02]"
+                          name="KGDL02" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL03]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL03]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL03]"
+                          name="KGDL03" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL04]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL04]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL04]"
+                          name="KGDL04" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL05]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL05]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGDL05]"
+                          name="KGDL05" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGMOPT]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGMOPT]"
+                          name="KGMOPT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGOOPT]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGOOPT]"
+                          name="KGOOPT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSOPT]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSOPT]"
+                          name="KGSOPT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSY]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSY]"
                           length="4"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSY]"
-                          name="DRSY" />
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSY]"
+                          name="KGSY" />
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRRT]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRRT]"
-                          length="2"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRRT]"
-                          name="DRRT" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRKY]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRKY]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRKY]"
-                          name="DRKY" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL01]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRDL01]"
-                          length="30"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL01]"
-                          name="DRDL01" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL02]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRDL02]"
-                          length="30"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRDL02]"
-                          name="DRDL02" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSPHD]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRSPHD]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRSPHD]"
-                          name="DRSPHD" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUDCO]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUDCO]"
-                          length="1"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUDCO]"
-                          name="DRUDCO" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRHRDC]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRHRDC]"
-                          length="1"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRHRDC]"
-                          name="DRHRDC" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUSER]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUSER]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUSER]"
-                          name="DRUSER" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRPID]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRPID]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRPID]"
-                          name="DRPID" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSEQN]"
                           dataType="numeric"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUPMJ]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMJ]"
-                          name="DRUPMJ"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSEQN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGSEQN]"
+                          name="KGSEQN"
+                          precision="7"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUSER]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUSER]"
+                          name="KGUSER" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGPID]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGPID]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGPID]"
+                          name="KGPID" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMJ]"
+                          name="KGUPMJ"
                           precision="6" />
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGJOBN]"
                           codePage="1252"
                           dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRJOBN]"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGJOBN]"
                           length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRJOBN]"
-                          name="DRJOBN" />
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGJOBN]"
+                          name="KGJOBN" />
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMT]"
                           dataType="numeric"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUPMT]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[DRUPMT]"
-                          name="DRUPMT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[KGUPMT]"
+                          name="KGUPMT"
                           precision="6" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGITEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="KGITEM" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="KGCO" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGMCU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          name="KGMCU" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGOBJ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="KGOBJ" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSUB]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="KGSUB" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL01]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL01" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL02]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL02" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL03]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL03" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL04]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL04" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL05]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="KGDL05" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGMOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGMOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGOOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGOOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="KGSOPT" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSY]"
                           codePage="1252"
                           dataType="str"
                           length="4"
-                          name="DRSY" />
+                          name="KGSY" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRRT]"
-                          codePage="1252"
-                          dataType="str"
-                          length="2"
-                          name="DRRT" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRKY]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRKY" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRDL01]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="DRDL01" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRDL02]"
-                          codePage="1252"
-                          dataType="str"
-                          length="30"
-                          name="DRDL02" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRSPHD]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRSPHD" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUDCO]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="DRUDCO" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRHRDC]"
-                          codePage="1252"
-                          dataType="str"
-                          length="1"
-                          name="DRHRDC" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUSER]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRUSER" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRPID]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="DRPID" />
-                        <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSEQN]"
                           dataType="numeric"
-                          name="DRUPMJ"
+                          name="KGSEQN"
+                          precision="7"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="KGUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGPID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="KGPID" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUPMJ]"
+                          dataType="numeric"
+                          name="KGUPMJ"
                           precision="6" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGJOBN]"
                           codePage="1252"
                           dataType="str"
                           length="10"
-                          name="DRJOBN" />
+                          name="KGJOBN" />
                         <externalMetadataColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUPMT]"
                           dataType="numeric"
-                          name="DRUPMT"
+                          name="KGUPMT"
                           precision="6" />
                       </externalMetadataColumns>
                     </output>
@@ -1762,106 +2047,162 @@ AND DRUPMJ &gt;=0</property>
                       name="ODBC Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRSY]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGITEM]"
                           codePage="1252"
                           dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRSY]"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGITEM]"
+                          length="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGITEM]"
+                          name="KGITEM" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGCO]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGCO]"
+                          length="5"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGCO]"
+                          name="KGCO" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGMCU]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGMCU]"
+                          length="12"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGMCU]"
+                          name="KGMCU" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGOBJ]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGOBJ]"
+                          length="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGOBJ]"
+                          name="KGOBJ" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSUB]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSUB]"
+                          length="8"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSUB]"
+                          name="KGSUB" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL01]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL01]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL01]"
+                          name="KGDL01" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL02]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL02]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL02]"
+                          name="KGDL02" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL03]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL03]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL03]"
+                          name="KGDL03" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL04]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL04]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL04]"
+                          name="KGDL04" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL05]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGDL05]"
+                          length="30"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGDL05]"
+                          name="KGDL05" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGMOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGMOPT]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGMOPT]"
+                          name="KGMOPT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGOOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGOOPT]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGOOPT]"
+                          name="KGOOPT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSOPT]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSOPT]"
+                          length="1"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSOPT]"
+                          name="KGSOPT" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSY]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSY]"
                           length="4"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRSY]"
-                          name="DRSY" />
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSY]"
+                          name="KGSY" />
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRRT]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRRT]"
-                          length="2"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRRT]"
-                          name="DRRT" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRKY]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRKY]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRKY]"
-                          name="DRKY" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRDL01]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRDL01]"
-                          length="30"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRDL01]"
-                          name="DRDL01" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRDL02]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRDL02]"
-                          length="30"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRDL02]"
-                          name="DRDL02" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRSPHD]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRSPHD]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRSPHD]"
-                          name="DRSPHD" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUDCO]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUDCO]"
-                          length="1"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUDCO]"
-                          name="DRUDCO" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRHRDC]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRHRDC]"
-                          length="1"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRHRDC]"
-                          name="DRHRDC" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUSER]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUSER]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUSER]"
-                          name="DRUSER" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRPID]"
-                          codePage="1252"
-                          dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRPID]"
-                          length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRPID]"
-                          name="DRPID" />
-                        <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUPMJ]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSEQN]"
                           dataType="numeric"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUPMJ]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUPMJ]"
-                          name="DRUPMJ"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGSEQN]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGSEQN]"
+                          name="KGSEQN"
+                          precision="7"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGUSER]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUSER]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGUSER]"
+                          name="KGUSER" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGPID]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGPID]"
+                          length="10"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGPID]"
+                          name="KGPID" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGUPMJ]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUPMJ]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGUPMJ]"
+                          name="KGUPMJ"
                           precision="6" />
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRJOBN]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGJOBN]"
                           codePage="1252"
                           dataType="str"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRJOBN]"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGJOBN]"
                           length="10"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRJOBN]"
-                          name="DRJOBN" />
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGJOBN]"
+                          name="KGJOBN" />
                         <outputColumn
-                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUPMT]"
+                          refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGUPMT]"
                           dataType="numeric"
-                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DRUPMT]"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[DRUPMT]"
-                          name="DRUPMT"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[KGUPMT]"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[KGUPMT]"
+                          name="KGUPMT"
                           precision="6" />
                         <outputColumn
                           refId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
@@ -1894,7 +2235,7 @@ AND DRUPMJ &gt;=0</property>
                       description="Spécifie l'instruction SQL qui génère la table de correspondance."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT UniqueKey FROM  StagingJDE.F0005 WHERE SourceSystemID = '63' </property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT UniqueKey FROM  StagingJDE.F0012 WHERE SourceSystemID = '63' </property>
                     <property
                       dataType="System.String"
                       description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
@@ -1963,7 +2304,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="47"
+                          cachedLength="32"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
@@ -2087,7 +2428,7 @@ where [refTable].[UniqueKey] = ?</property>
       DTS:refId="Package\Pre-step"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{94B3BDFA-682B-4A97-A903-ABAC65BC4256}"
+      DTS:DTSID="{BB42FA7D-C97B-4FB2-9553-74DF8339E3CB}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
@@ -2099,7 +2440,7 @@ where [refTable].[UniqueKey] = ?</property>
           DTS:refId="Package\Pre-step\Get JulianJDEDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2CC63813-9AA6-4049-BFB4-43DCD825A15D}"
+          DTS:DTSID="{32346037-1E19-4B12-B5C5-74C79F6C63B3}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get JulianJDEDate"
@@ -2131,7 +2472,7 @@ where [refTable].[UniqueKey] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{FADCA4A7-0942-4FB1-82B5-15719FD9A63D}"
+      DTS:DTSID="{37092510-730F-4630-921C-9153218917CB}"
       DTS:From="Package\Pre-step"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2159,32 +2500,32 @@ where [refTable].[UniqueKey] = ?</property>
           PanelSize="335,121"
           Size="335,164"
           Id="Package\Data Processing"
-          TopLeft="124,272.477272727273" />
+          TopLeft="121,372.477272727273" />
         <NodeLayout
           Size="167,42"
           Id="Package\Pre-step\Get JulianJDEDate"
-          TopLeft="76,30.75" />
+          TopLeft="73,106.75" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="325,126"
-          Size="325,169"
+          PanelSize="325,280"
+          Size="325,323"
           Id="Package\Pre-step"
-          TopLeft="128,49.75" />
+          TopLeft="125,7" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="291,218.75">
+          TopLeft="288,330">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.727272727273"
+              EndConnector="0,42.477272727273"
               Start="0,0"
-              End="0,46.227272727273">
+              End="0,34.977272727273">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.227272727273" />
+                    End="0,34.977272727273" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2204,38 +2545,38 @@ where [refTable].[UniqueKey] = ?</property>
         <NodeLayout
           Size="155,42"
           Id="Package\Data Processing\StageLoad\Conditional Split"
-          TopLeft="282,433" />
+          TopLeft="585,272" />
         <NodeLayout
           Size="236,42"
           Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="245,201" />
+          TopLeft="548,40" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
-          TopLeft="160.083333861083,612.5" />
+          TopLeft="463.083333861083,451.5" />
         <NodeLayout
           Size="142,42"
           Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="296,37.1999995970726" />
+          TopLeft="38,33.1999995970726" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
-          TopLeft="414,614" />
+          TopLeft="717,453" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
-          TopLeft="416,714" />
+          TopLeft="727,553" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
-          TopLeft="289.583333861083,121.5" />
+          TopLeft="299.583333861083,34.5" />
         <NodeLayout
           Size="170,42"
           Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="273,303" />
+          TopLeft="576,142" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="358.75,345">
+          TopLeft="661.75,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2259,7 +2600,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de commande OLE DB]"
-          TopLeft="502.25,656">
+          TopLeft="809.25,495">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2281,7 +2622,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
-          TopLeft="360.5,243">
+          TopLeft="663.5,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2303,18 +2644,18 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
-          TopLeft="363.541666930542,79.1999995970726">
+          TopLeft="180,54.8499997985363">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.3000004029274"
+              EndConnector="119.583333861083,0"
               Start="0,0"
-              End="0,34.8000004029274">
+              End="112.083333861083,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8000004029274" />
+                    End="112.083333861083,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2325,7 +2666,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[INSERT]"
-          TopLeft="335,475">
+          TopLeft="638,314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2361,18 +2702,18 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
-          TopLeft="361.541666930542,163.5">
+          TopLeft="440.583333861083,58.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.5"
+              EndConnector="107.416666138917,0"
               Start="0,0"
-              End="0,30">
+              End="99.916666138917,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30" />
+                    End="99.916666138917,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2383,7 +2724,7 @@ where [refTable].[UniqueKey] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[DELETE]"
-          TopLeft="384,475">
+          TopLeft="687,314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2394,17 +2735,17 @@ where [refTable].[UniqueKey] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4521072796936" />
+                    End="0,52.4521072796935" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.4521072796936"
-                    Point2="0,56.4521072796936"
-                    Point3="4,56.4521072796936" />
+                    Point1="0,52.4521072796935"
+                    Point2="0,56.4521072796935"
+                    Point3="4,56.4521072796935" />
                   <mssgle:LineSegment
-                    End="117.5,56.4521072796936" />
+                    End="117.5,56.4521072796935" />
                   <mssgle:CubicBezierSegment
-                    Point1="117.5,56.4521072796936"
-                    Point2="121.5,56.4521072796936"
-                    Point3="121.5,60.4521072796936" />
+                    Point1="117.5,56.4521072796935"
+                    Point2="121.5,56.4521072796935"
+                    Point3="121.5,60.4521072796935" />
                   <mssgle:LineSegment
                     End="121.5,131.5" />
                 </mssgle:SegmentCollection>
@@ -2413,7 +2754,7 @@ where [refTable].[UniqueKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="43.06705078125,61.4521072796936,35.3658984375,9.2705078125"
+              BoundingBox="43.06705078125,61.4521072796935,35.3658984375,9.2705078125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
