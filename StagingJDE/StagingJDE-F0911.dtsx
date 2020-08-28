@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0911"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="486"
-  DTS:VersionGUID="{82746560-9C32-4DCB-A39A-A2DEA0D5ED6D}">
+  DTS:VersionBuild="489"
+  DTS:VersionGUID="{9E76B55D-C458-46F5-B694-A5C0E9E360BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="G8VcKVtYKQ=="
-            IV="fWIPSkHjRPs=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="kRybrvAi3w=="
+            IV="3/Bkazv2wHk=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>fWIPSkHjRPuhF1qeu9umTWlBGqhOH+yXUSTWjQAeVJkGlupAJPiEyvV8Z3euSqJ/69MH3YUwsuV3Iptzk0KtsVWjd15IkBar79K7ilmnxUdEOnirLyTRo+gbxRb1h6DgwxuoXXOhy0i8FjxPRmyc16LePB1yEhGa</CipherValue>
+              <CipherValue>3/Bkazv2wHmyjB9Vi33DO0kC/SJPdXU37nq7wAv95fDNVYRLjJJ8MC0Tt8dVuoeGOHhj2mQdbmbU43yEKhryn/Wc9nw48J0Pmu+A3rEzavqbqabPkIEAK1ePG0iNFD5TRFCOS47pWOzZjplY6cNcdzAVCglDlFHT</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -96,6 +96,17 @@
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F89B2BE2-BFD9-4A4B-B544-E53F0D08E0D7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;1&quot; + SUBSTRING((DT_WSTR,10)(YEAR(GETUTCDATE() ) - @[$Project::YearsOfHistory]  ),3,2)+ &quot;001&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastHistoricalDate">
+      <DTS:VariableValue
+        DTS:DataType="8">118001</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{671C8522-0C77-4E60-BE6D-8E341F228889}"
@@ -235,11 +246,11 @@ AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</DTS:VariableValue>
           <DTS:PropertyExpression
             DTS:Name="BufferTempStoragePath">@[$Project::BufferTempLocation]</DTS:PropertyExpression>
           <DTS:PropertyExpression
+            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
             DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="[Unique Key Lookup].[SqlCommand]">@[User::SQLLookup]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               BLOBTempStoragePath="C:\TEMP"
@@ -6603,9 +6614,17 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
           TopLeft="717,453" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
+          Size="141,42"
+          Id="Package\Data Processing\StageLoad\Add Columns"
+          TopLeft="299.583333861083,34.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="548,40" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Processing\StageLoad\Insert New Rows"
+          TopLeft="463.083333861083,451.5" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
@@ -6615,21 +6634,13 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\ODBC Source"
           TopLeft="38,33.1999995970726" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\Data Processing\StageLoad\Insert New Rows"
-          TopLeft="463.083333861083,451.5" />
-        <NodeLayout
           Size="155,42"
           Id="Package\Data Processing\StageLoad\Conditional Split"
           TopLeft="585,272" />
         <NodeLayout
-          Size="141,42"
-          Id="Package\Data Processing\StageLoad\Add Columns"
-          TopLeft="299.583333861083,34.5" />
-        <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="548,40" />
+          Size="170,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="661.75,184">
@@ -6818,25 +6829,15 @@ where [refTable].[UniqueKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
+    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6862,15 +6863,25 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
+    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F00142"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="485"
-  DTS:VersionGUID="{25729BCF-27D3-4473-AD66-764E3A61CFC1}">
+  DTS:VersionBuild="486"
+  DTS:VersionGUID="{A7388D06-6322-4104-B2CB-DF4A211EBB31}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="KLwD0ZioZQ=="
-            IV="fMZgISE3tj0=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="V2HduS0Qxw=="
+            IV="7hmLV+W6y7s=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>fMZgISE3tj0jsIaW9hM2zwVHBdRtNQhvSudWCn9Bqh7xSZaT7FA/uv3Q0Ld+vI9swKPP9510kUt9Nh8iofSGsbBDUSyt/UVd/wySsDHu0WXY+3iEiw3esxlr1wTpnJljbiCfMHrMbXFBrgotZkHtqXkR0Nv7P+DI</CipherValue>
+              <CipherValue>7hmLV+W6y7ttIUXxRLFu0KrqLU2AgThq5K5t8BIz7JCUe2/go7Et0y9vWrear6kiYEivk16mYdNmtRKC1YfCt49nHZtvdkYd6N4OnLauRYBGI6i17AQgICMHbeW5p5Alof9iitq7yeqgD8LjNKhLUAb3SGz4q2q9</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -232,9 +232,9 @@ JPDTAFR73.F00142 </DTS:VariableValue>
           <DTS:PropertyExpression
             DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
             DTS:Name="[Unique Key Lookup].[SqlCommand]">@[User::SQLLookup]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               BLOBTempStoragePath="C:\TEMP"
@@ -1613,7 +1613,7 @@ JPDTAFR73.F00142 </property>
                       description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT UniqueKey FROM  StagingJDE.F0005 WHERE SourceSystemID = '63') [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT UniqueKey FROM  StagingJDE.F00142 WHERE SourceSystemID = '63') [refTable]
 where [refTable].[UniqueKey] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -1663,8 +1663,8 @@ where [refTable].[UniqueKey] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Data Processing\StageLoad\Unique Key Lookup.Connections[OleDbConnection]"
-                      connectionManagerID="{8A6DAF0E-5EA9-4518-A16E-EDE8F0CC4461}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DataWarehouse]"
+                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging]"
                       description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
                       name="OleDbConnection" />
                   </connections>
@@ -1863,7 +1863,7 @@ where [refTable].[UniqueKey] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="130,42"
+          Size="128,42"
           Id="Package\Data Processing\StageLoad"
           TopLeft="97.75,23.25" />
         <ContainerLayout
@@ -1919,17 +1919,17 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Conditional Split"
           TopLeft="585,272" />
         <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="548,40" />
-        <NodeLayout
           Size="183,42"
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
           TopLeft="717,453" />
         <NodeLayout
-          Size="142,42"
-          Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="38,33.1999995970726" />
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="548,40" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
@@ -1939,13 +1939,13 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Add Columns"
           TopLeft="299.583333861083,34.5" />
         <NodeLayout
+          Size="142,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
+        <NodeLayout
           Size="159,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
           TopLeft="463.083333861083,451.5" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="661.75,184">
@@ -2134,8 +2134,23 @@ where [refTable].[UniqueKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -2155,6 +2170,14 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
     <Properties>
       <Property>
@@ -2164,29 +2187,6 @@ where [refTable].[UniqueKey] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
