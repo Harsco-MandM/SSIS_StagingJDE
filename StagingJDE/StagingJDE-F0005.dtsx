@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0005"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="483"
-  DTS:VersionGUID="{5576B2CF-4C5F-4051-ADA1-64841CF610BD}">
+  DTS:VersionBuild="484"
+  DTS:VersionGUID="{6E53DDB1-21B6-46AB-8662-1BA87BF06B39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="eBZJ1ihNyA=="
-            IV="zEzJU+Vt1Dw=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="CkUhThrzOg=="
+            IV="4uhFCDtW+Xc=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>zEzJU+Vt1DyNJCK8KlhtE1kpRsb/WFRtuHXHu9MuGAKBZRC67Xp4YZVR4M0aAO1EJe9onEh09HnUeLfdVzQX4V9LKD9aRC+KNuxapbtSVQocoZ1VwcBYf9D0YH4oCcgMOmQDjStgtRJ/KEuLQQlxqLZlBkFgbiOA</CipherValue>
+              <CipherValue>4uhFCDtW+XdGl3I8rErtmNZACma3XFzWxgFZtbBKuxArHrLwM4t9ElZSTB8jBkX84UIat01IdnarNftPyFsCDvM0iYf2hnWaKnWWGhT3f9/jj9Wmg4NW+ItJ0uKSfShK1x7ra884zsTPqNigA1wUoVqa6hIW3ZaI</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -2159,7 +2159,7 @@ where [refTable].[UniqueKey] = ?</property>
           PanelSize="335,121"
           Size="335,164"
           Id="Package\Data Processing"
-          TopLeft="121,372.477272727273" />
+          TopLeft="141,374.477272727273" />
         <NodeLayout
           Size="167,42"
           Id="Package\Pre-step\Get JulianJDEDate"
@@ -2173,18 +2173,30 @@ where [refTable].[UniqueKey] = ?</property>
           TopLeft="125,7" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="288,330">
+          TopLeft="287.5,330">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.477272727273"
+              EndConnector="21,44.477272727273"
               Start="0,0"
-              End="0,34.977272727273">
+              End="21,36.977272727273">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.977272727273" />
+                    End="0,18.2386363636365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2386363636365"
+                    Point2="0,22.2386363636365"
+                    Point3="4,22.2386363636365" />
+                  <mssgle:LineSegment
+                    End="17,22.2386363636365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17,22.2386363636365"
+                    Point2="21,22.2386363636365"
+                    Point3="21,26.2386363636365" />
+                  <mssgle:LineSegment
+                    End="21,36.977272727273" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2210,9 +2222,9 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
           TopLeft="548,40" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Data Processing\StageLoad\Insert After Delete"
-          TopLeft="727,553" />
+          Size="159,42"
+          Id="Package\Data Processing\StageLoad\Insert New Rows"
+          TopLeft="463.083333861083,451.5" />
         <NodeLayout
           Size="142,42"
           Id="Package\Data Processing\StageLoad\ODBC Source"
@@ -2222,9 +2234,9 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
           TopLeft="717,453" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\Data Processing\StageLoad\Insert New Rows"
-          TopLeft="463.083333861083,451.5" />
+          Size="166,42"
+          Id="Package\Data Processing\StageLoad\Insert After Delete"
+          TopLeft="727,553" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
@@ -2421,7 +2433,7 @@ where [refTable].[UniqueKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
+    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2442,7 +2454,7 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
+    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
