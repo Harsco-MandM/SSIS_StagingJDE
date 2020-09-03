@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0902"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="485"
-  DTS:VersionGUID="{CA8CB658-2D72-4002-A3BC-05F36C1DA2DD}">
+  DTS:VersionBuild="487"
+  DTS:VersionGUID="{469BA2FE-20FF-4FB7-AF69-714EC7F66126}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="N9NbpDskhQ=="
-            IV="bRuiSrMHc74=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="k+rklAGGWg=="
+            IV="Ya36TcuOANk=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>bRuiSrMHc75fStsBbw6/CVbI4asU71W4HAjuuCW/nKp7Gg3nEzTXRlUhIJFNkVpW1ugSePNXIiBDvHWeESPTrfKPSxH8bshq9N7gaCbRnd5Xb4qqIdRQz5B2FKxEEjYoHd0cW1exJnb+co4VxIMM0Mr4SRxTh0WL</CipherValue>
+              <CipherValue>Ya36TcuOANlBeGzKC1/44bbmonMDs5uGIuTopntPv293W28cKUJzP3JfT/ewAvKRYMxDGqGP2603LVPEcq80rxPWBqlRs5QOtk+M4HasYzlloGYapWo4XWjLmWSh9EtOPlj9Q/jH0YKYHRZrpREdFBziZ9xD4kzz</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -107,6 +107,28 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{528005EB-AFFE-4355-8DDE-05302E24442F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,10)(YEAR(GETUTCDATE() ))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxHistoricalYear">
+      <DTS:VariableValue
+        DTS:DataType="8">2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56D7E421-E3E2-4A18-8E20-135A16DB8471}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,10)(YEAR(GETUTCDATE() ) - @[$Project::YearsOfHistory]  )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MinHistoricalYear">
+      <DTS:VariableValue
+        DTS:DataType="8">2018</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{8405BCDC-FB80-4D65-BB5E-1D101E7112DC}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DELETE FROM &quot; +  @[User::StagingTableName] +&#xA;&quot; WITH (ROWLOCK) WHERE UniqueKey = ? &quot;"
@@ -120,7 +142,7 @@
       DTS:CreationName=""
       DTS:DTSID="{AEF1F7BD-68C8-4C3A-BD21-194BE32AFEFF}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0902  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND GBUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0902  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND GBCTRY || LPAD(GBFY,2,'0') &gt;= '&quot; + @[User::MinHistoricalYear]  + &quot;' &#xA;AND GBCTRY || LPAD(GBFY,2,'0') &lt;= '&quot; + @[User::MaxHistoricalYear]  + &quot;' &#xA;&#xA;AND GBUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -134,6 +156,9 @@ JPDTAFR73.F0902
 WHERE
  1=1
  
+AND GBCTRY || LPAD(GBFY,2,'0') &gt;= '2018' 
+AND GBCTRY || LPAD(GBFY,2,'0') &lt;= '2020' 
+
 AND GBUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -236,9 +261,9 @@ AND GBUPMJ &gt;=0</DTS:VariableValue>
           <DTS:PropertyExpression
             DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
             DTS:Name="[Unique Key Lookup].[SqlCommand]">@[User::SQLLookup]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               BLOBTempStoragePath="C:\TEMP"
@@ -475,7 +500,7 @@ AND GBUPMJ &gt;=0</DTS:VariableValue>
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="122"
+                          length="39"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -484,13 +509,13 @@ AND GBUPMJ &gt;=0</DTS:VariableValue>
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBAID]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBCTRY]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBFY]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBFQ]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBLT]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBSBL]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBSBLT]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBCRCD]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBAID]} + (DT_STR,2,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBCTRY]} + (DT_STR,2,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBFY]} + (DT_STR,4,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBFQ]} + (DT_STR,2,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBLT]} + (DT_STR,8,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBSBL]} + (DT_STR,1,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBSBLT]} + (DT_STR,3,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GBCRCD]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)GBAID + (DT_STR,15,1252)GBCTRY + (DT_STR,15,1252)GBFY + (DT_STR,15,1252)GBFQ + (DT_STR,15,1252)GBLT + (DT_STR,15,1252)GBSBL + (DT_STR,15,1252)GBSBLT + (DT_STR,15,1252)GBCRCD</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)GBAID + (DT_STR,2,1252)GBCTRY + (DT_STR,2,1252)GBFY + (DT_STR,4,1252)GBFQ + (DT_STR,2,1252)GBLT + (DT_STR,8,1252)GBSBL + (DT_STR,1,1252)GBSBLT + (DT_STR,3,1252)GBCRCD</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -824,7 +849,7 @@ AND GBUPMJ &gt;=0</DTS:VariableValue>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="122"
+                          cachedLength="39"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -1531,7 +1556,7 @@ AND GBUPMJ &gt;=0</DTS:VariableValue>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="122"
+                          cachedLength="39"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -2229,6 +2254,9 @@ JPDTAFR73.F0902
 WHERE
  1=1
  
+AND GBCTRY || LPAD(GBFY,2,'0') &gt;= '2018' 
+AND GBCTRY || LPAD(GBFY,2,'0') &lt;= '2020' 
+
 AND GBUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
@@ -3228,7 +3256,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="122"
+                          cachedLength="39"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
@@ -3417,7 +3445,7 @@ where [refTable].[UniqueKey] = ?</property>
         <NodeLayout
           Size="130,42"
           Id="Package\Data Processing\StageLoad"
-          TopLeft="96.75,23.25" />
+          TopLeft="95.75,22.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -3467,37 +3495,37 @@ where [refTable].[UniqueKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Data Processing\StageLoad\Conditional Split"
-          TopLeft="585,272" />
-        <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="548,40" />
-        <NodeLayout
           Size="183,42"
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
           TopLeft="717,453" />
         <NodeLayout
-          Size="142,42"
-          Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="38,33.1999995970726" />
+          Size="170,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
           TopLeft="727,553" />
         <NodeLayout
-          Size="141,42"
-          Id="Package\Data Processing\StageLoad\Add Columns"
-          TopLeft="299.583333861083,34.5" />
+          Size="142,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
           TopLeft="463.083333861083,451.5" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
+          Size="155,42"
+          Id="Package\Data Processing\StageLoad\Conditional Split"
+          TopLeft="585,272" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Data Processing\StageLoad\Add Columns"
+          TopLeft="299.583333861083,34.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="548,40" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="661.75,184">
@@ -3686,40 +3714,6 @@ where [refTable].[UniqueKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
     <Properties>
       <Property>
@@ -3739,6 +3733,40 @@ where [refTable].[UniqueKey] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

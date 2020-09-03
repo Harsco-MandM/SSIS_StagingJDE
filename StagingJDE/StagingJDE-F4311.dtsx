@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F4311"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="487"
-  DTS:VersionGUID="{14655D29-E43A-41CC-B60C-705E93DB3A31}">
+  DTS:VersionBuild="489"
+  DTS:VersionGUID="{F65379D3-1FE4-455A-8A22-D09266BE743E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="pjOV6LeibQ=="
-            IV="ZG5N0sosj28=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="bB/5Z33wFg=="
+            IV="KYhXTInnV6Q=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>ZG5N0sosj2+/YBFDx05eUN3zmZ0cJgeS0J5AQQljsUlSNx47AV1ZJorPYuziXuLqrrYfPXP4lUY3XAPK0I7HLdgyIwtzc8XJGcRgwt60NxeI1ZYS23v2pUptvgMkjOPvSiHDa476WgNZa92FPqvBDIrVZ5jbjVsE</CipherValue>
+              <CipherValue>KYhXTInnV6SAd//iFfYca0ANY+ToUtPOTfqByE2KN5xe8dceYOG1r2RFGkMaFwThNZNcTJs5gJQRKPGr3e1fZPpw4uIrEBliAjc5bRJem3i1onOx1/uLpBICIX13En6owQRJzxFOorCfDdxP/Gfe+ZJOqIzm6Iz6</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -98,6 +98,17 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{DC1071A2-1256-490A-961F-1F547A0B6E59}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;1&quot; + SUBSTRING((DT_WSTR,10)(YEAR(GETUTCDATE() ) - @[$Project::YearsOfHistory]  ),3,2)+ &quot;001&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastHistoricalDate">
+      <DTS:VariableValue
+        DTS:DataType="8">118001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{DB0D8DCF-C1FE-42A0-A304-FDC95F7EB2FE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -120,7 +131,7 @@
       DTS:CreationName=""
       DTS:DTSID="{1AC21E23-6C7C-4AD4-B297-92B36CB09BF0}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4311  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND PDUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4311  &#xA;WHERE&#xA; 1=1&#xA;&#xA;AND PDTRDJ &gt;= &quot; + @[User::LastHistoricalDate] + &quot; &#xA;AND PDUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -133,7 +144,8 @@ FROM
 JPDTAFR73.F4311  
 WHERE
  1=1
- 
+
+AND PDTRDJ &gt;= 118001 
 AND PDUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -234,11 +246,11 @@ AND PDUPMJ &gt;=0</DTS:VariableValue>
           <DTS:PropertyExpression
             DTS:Name="BufferTempStoragePath">@[$Project::BufferTempLocation]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
             DTS:Name="[Unique Key Lookup].[SqlCommand]">@[User::SQLLookup]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               BLOBTempStoragePath="C:\TEMP"
@@ -6087,7 +6099,8 @@ FROM
 JPDTAFR73.F4311  
 WHERE
  1=1
- 
+
+AND PDTRDJ &gt;= 118001 
 AND PDUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
@@ -10599,15 +10612,25 @@ where [refTable].[UniqueKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
+    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10633,25 +10656,15 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
+    design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

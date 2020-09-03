@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F4801"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="489"
-  DTS:VersionGUID="{D405C67B-6BC4-44AF-9075-39B7220123EC}">
+  DTS:VersionBuild="491"
+  DTS:VersionGUID="{0B88F7B7-2F0C-4FF9-ADE8-BAC91EEE35DE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ZQdgAkuzvA=="
-            IV="ZOB3KulbCqA=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="JmC71NYLSA=="
+            IV="cYPRFbTtDe4=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>ZOB3KulbCqAMQrBpAYN+toIrvwp9V4AyazHtCAcbI+jUpJnFrwH0pZguKph1TyHKeSV8+uHmGeieH6/zDwAmVIN48+QAjo5lZRflxgqYa+raglRDNoe6cTQA4QI1fjqgwBR17GCsTr/X4+VjqHhgYO3MwgEZa5RJ</CipherValue>
+              <CipherValue>cYPRFbTtDe64YQ4TqEFYxBEjfM8SxnaS2WKkvHbyT/af962p5bnEluKM3pKg20Tn030fPsAHKDyrEKStWFsYCGN6hsbiWIG0/OsglFUg1xGq4Mpl9t3Urw7EdtxRUVl41GssjTCYUlRkGdjUpJeIPTJq2ZbNsGoT</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -98,6 +98,17 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{237B5FD1-E4DD-443A-9273-A5CCDEE1D5B3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;1&quot; + SUBSTRING((DT_WSTR,10)(YEAR(GETUTCDATE() ) - @[$Project::YearsOfHistory]  ),3,2)+ &quot;001&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastHistoricalDate">
+      <DTS:VariableValue
+        DTS:DataType="8">118001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{3F046ACA-885E-4CA4-B5CB-D54667160F52}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -120,7 +131,7 @@
       DTS:CreationName=""
       DTS:DTSID="{976C175F-8E51-448D-B833-C0CC5C36CC2A}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4801  &#xA;WHERE&#xA; 1=1&#xA; AND WATRDJ &gt;= 1&quot; + SUBSTRING((DT_WSTR,10)(YEAR(GETUTCDATE() )-10),3,2)+ &quot;001 &#xA;AND WAUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4801  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND WATRDJ &gt;= &quot;+ @[User::LastHistoricalDate]  + &quot; &#xA;AND WAUPMJ &gt;= &quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -133,8 +144,9 @@ FROM
 JPDTAFR73.F4801  
 WHERE
  1=1
- AND WATRDJ &gt;= 110001 
-AND WAUPMJ &gt;=0</DTS:VariableValue>
+ 
+AND WATRDJ &gt;= 118001 
+AND WAUPMJ &gt;= 0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -4476,8 +4488,9 @@ FROM
 JPDTAFR73.F4801  
 WHERE
  1=1
- AND WATRDJ &gt;= 110001 
-AND WAUPMJ &gt;=0</property>
+ 
+AND WATRDJ &gt;= 118001 
+AND WAUPMJ &gt;= 0</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."

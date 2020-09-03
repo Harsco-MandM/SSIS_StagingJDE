@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F41021"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="491"
-  DTS:VersionGUID="{FDBEF079-309B-4356-A78B-D398AEF1EE76}">
+  DTS:VersionBuild="492"
+  DTS:VersionGUID="{8669473E-F5C0-4638-90EC-3D3B9D812D00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="HBlE2S4eOg=="
-            IV="8jcs2Se7WKM=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="S/vKH5ALig=="
+            IV="sjON0We550k=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>8jcs2Se7WKPoE+wO+skLmeeC0GA2nFgRIXWx87cr0uZuL6uXACjcoeK4Zp1wm2hi0ovYKSegsXgU1ThN/bgz8DNLdAgjzOHMpylgETdTdvvdn4H2abas4b1z73PPsVuaH0zq+Dqz16T6xOYb7hNRxmEUiHSVGrAC</CipherValue>
+              <CipherValue>sjON0We550kqglmdW/suPDLGeelwjVeW4D+p4JyOSbZXiH5spNnF3/e4tgBXDk7jMGMjAsKM0Iazfdf0FbxjOW9YSUiaZ7RqIEcmpQYNi8sOcA2fzu1AB0QjlJm7PMVvJW+9YH6BKJIedeEGgGMhKLzPO40F7gtI</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -120,7 +120,7 @@
       DTS:CreationName=""
       DTS:DTSID="{552A1014-4673-4203-A56A-B8CFFE5F1DF8}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F41021  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND LIUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F41021  &#xA;WHERE&#xA; 1=1&#xA; &#xA;&#xA;AND LIUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -134,6 +134,7 @@ JPDTAFR73.F41021
 WHERE
  1=1
  
+
 AND LIUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -2186,6 +2187,7 @@ JPDTAFR73.F41021
 WHERE
  1=1
  
+
 AND LIUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"

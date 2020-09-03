@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0006"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="484"
-  DTS:VersionGUID="{BE5F9610-1888-4C43-9B82-7BC46EE1DB67}">
+  DTS:VersionBuild="485"
+  DTS:VersionGUID="{B535072B-03D5-40FE-A1C1-98B9FD9EF6C7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="5s4QTJJ+YA=="
-            IV="LBmelZg0MWU=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ozGQajpx9A=="
+            IV="iADloCE3xeg=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>LBmelZg0MWXw457gmlzOBIHwYB+0SJ8+5wYKMkJjbuEYmFlQpgZGhvtCfS6gxLOFV3brjyr5tqqtGAFWcIugk06Nvp9aVgHN9AlHvhFVfrXsW8dItZDaLPImFlwdvAh8kIC2+w1A02hRMSHBPStZoFvaZwuyhFtS</CipherValue>
+              <CipherValue>iADloCE3xegU+/4fu5Z1sz8Z8bjlzY6GIT594sJ+9ivCvSquaeFef65gp9znviu0fwY/DYkWFF7xmCGwsv8uY4hyLsz564+yQfxhhWWe7TmtUw2G9VatzcVYAipV0sjULtJ4Zf0dPQKg9fWiOOm49+nMBnjsOQ1a</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -120,7 +120,7 @@
       DTS:CreationName=""
       DTS:DTSID="{85E1A98E-F991-4B8C-B8CA-61463FA71F91}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0006  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND MCUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0006  &#xA;WHERE&#xA; MCCO &lt;&gt; '99999'&#xA; &#xA;AND MCUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -132,7 +132,7 @@
 FROM 
 JPDTAFR73.F0006  
 WHERE
- 1=1
+ MCCO &lt;&gt; '99999'
  
 AND MCUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
@@ -234,11 +234,11 @@ AND MCUPMJ &gt;=0</DTS:VariableValue>
           <DTS:PropertyExpression
             DTS:Name="BufferTempStoragePath">@[$Project::BufferTempLocation]</DTS:PropertyExpression>
           <DTS:PropertyExpression
+            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
             DTS:Name="[ODBC Source].[SqlCommand]">@[User::SQLJDESourceQuery]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="[Unique Key Lookup].[SqlCommand]">@[User::SQLLookup]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="[Delete Matching Rows].[SqlCommand]">@[User::SQLDeleteTable]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               BLOBTempStoragePath="C:\TEMP"
@@ -4336,7 +4336,7 @@ AND MCUPMJ &gt;=0</DTS:VariableValue>
 FROM 
 JPDTAFR73.F0006  
 WHERE
- 1=1
+ MCCO &lt;&gt; '99999'
  
 AND MCUPMJ &gt;=0</property>
                     <property
@@ -7501,8 +7501,23 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -7522,23 +7537,8 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
+    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
     <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0911"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="489"
-  DTS:VersionGUID="{9E76B55D-C458-46F5-B694-A5C0E9E360BE}">
+  DTS:VersionBuild="492"
+  DTS:VersionGUID="{7EA70A2F-AEC9-4BBA-AEE4-F648B2AEAB95}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="kRybrvAi3w=="
-            IV="3/Bkazv2wHk=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="R7W8aJuKqw=="
+            IV="mueLL8PSa0g=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>3/Bkazv2wHmyjB9Vi33DO0kC/SJPdXU37nq7wAv95fDNVYRLjJJ8MC0Tt8dVuoeGOHhj2mQdbmbU43yEKhryn/Wc9nw48J0Pmu+A3rEzavqbqabPkIEAK1ePG0iNFD5TRFCOS47pWOzZjplY6cNcdzAVCglDlFHT</CipherValue>
+              <CipherValue>mueLL8PSa0hXr3dXhMxw53cOK2eS7FqZ/qHXm226/GELhzBIZ9DpWkXSJTlIB3QBk+6n39Gv1sxzHYUjbd/qO0zcaBRvPJALtUaNfHxcmNjURKYwbVXdSCRzYa3yk1d93ENI56ARVa+FiwnrwjU/PmIy5TOqT20a</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -131,7 +131,7 @@
       DTS:CreationName=""
       DTS:DTSID="{FAD3C090-6691-4C35-8567-34589F7917AB}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0911  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND GLDGJ &gt;= 1&quot; + SUBSTRING((DT_WSTR,10)(YEAR(GETUTCDATE() )-2),3,2)+ &quot;001  &#xA;AND GLKCO not in ('99999') AND  GLUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0911  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND GLDGJ &gt;= &quot; + &#xA; (DT_WSTR,10) @[User::LastHistoricalDate]  + &quot; &#xA;AND  GLUPMJ &gt;=&quot; + (DT_WSTR,10) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -145,8 +145,8 @@ JPDTAFR73.F0911
 WHERE
  1=1
  
-AND GLDGJ &gt;= 118001  
-AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</DTS:VariableValue>
+AND GLDGJ &gt;= 118001 
+AND  GLUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -474,7 +474,7 @@ AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</DTS:VariableValue>
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="107"
+                          length="34"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -483,13 +483,13 @@ AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</DTS:VariableValue>
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLDCT]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLDOC]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLKCO]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLDGJ]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLJELN]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLLT]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLEXTL]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,2,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLDCT]} + (DT_STR,8,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLDOC]} + (DT_STR,5,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLKCO]} + (DT_STR,6,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLDGJ]} + (DT_STR,7,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLJELN]} + (DT_STR,2,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLLT]} + (DT_STR,2,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[GLEXTL]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)GLDCT + (DT_STR,15,1252)GLDOC + (DT_STR,15,1252)GLKCO + (DT_STR,15,1252)GLDGJ + (DT_STR,15,1252)GLJELN + (DT_STR,15,1252)GLLT + (DT_STR,15,1252)GLEXTL</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,2,1252)GLDCT + (DT_STR,8,1252)GLDOC + (DT_STR,5,1252)GLKCO + (DT_STR,6,1252)GLDGJ + (DT_STR,7,1252)GLJELN + (DT_STR,2,1252)GLLT + (DT_STR,2,1252)GLEXTL</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -823,7 +823,7 @@ AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</DTS:VariableValue>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="107"
+                          cachedLength="34"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -2410,7 +2410,7 @@ AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</DTS:VariableValue>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="107"
+                          cachedLength="34"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -3988,8 +3988,8 @@ JPDTAFR73.F0911
 WHERE
  1=1
  
-AND GLDGJ &gt;= 118001  
-AND GLKCO not in ('99999') AND  GLUPMJ &gt;=0</property>
+AND GLDGJ &gt;= 118001 
+AND  GLUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -6371,7 +6371,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="107"
+                          cachedLength="34"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
