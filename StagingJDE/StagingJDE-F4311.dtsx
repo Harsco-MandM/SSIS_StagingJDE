@@ -7,13 +7,13 @@
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
   DTS:DTSID="{BFAEB2FD-0B0C-458D-854A-053D81A5C6D0}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
   DTS:LocaleID="1033"
   DTS:ObjectName="StagingJDE-F4311"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="489"
-  DTS:VersionGUID="{F65379D3-1FE4-455A-8A22-D09266BE743E}">
+  DTS:VersionBuild="490"
+  DTS:VersionGUID="{6B3E4EDF-0B59-4E0A-A9CC-4EA9056B9511}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="bB/5Z33wFg=="
-            IV="KYhXTInnV6Q=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="pOUZreQr9A=="
+            IV="NqTUUw4Hy+o=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>KYhXTInnV6SAd//iFfYca0ANY+ToUtPOTfqByE2KN5xe8dceYOG1r2RFGkMaFwThNZNcTJs5gJQRKPGr3e1fZPpw4uIrEBliAjc5bRJem3i1onOx1/uLpBICIX13En6owQRJzxFOorCfDdxP/Gfe+ZJOqIzm6Iz6</CipherValue>
+              <CipherValue>NqTUUw4Hy+ofa3NzFsvyIbB3zLwrcQW/62kicMeWnKR8EZ35i06tBVmEDbB7o8IW98vTirV4A/htP87zyAzoP2K9QzlHkX7hEe+pqDSdv5L222XsXyVUjT0205cVB66H/Epwy3A1SyN5AyyC5+48Pw3kdLwdOTJN</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -131,7 +131,7 @@
       DTS:CreationName=""
       DTS:DTSID="{1AC21E23-6C7C-4AD4-B297-92B36CB09BF0}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4311  &#xA;WHERE&#xA; 1=1&#xA;&#xA;AND PDTRDJ &gt;= &quot; + @[User::LastHistoricalDate] + &quot; &#xA;AND PDUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4311  &#xA;WHERE&#xA; 1=1&#xA;&#xA; &#xA;AND PDUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -145,7 +145,7 @@ JPDTAFR73.F4311
 WHERE
  1=1
 
-AND PDTRDJ &gt;= 118001 
+ 
 AND PDUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -6100,7 +6100,7 @@ JPDTAFR73.F4311
 WHERE
  1=1
 
-AND PDTRDJ &gt;= 118001 
+ 
 AND PDUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
