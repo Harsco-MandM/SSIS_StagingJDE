@@ -1,11 +1,11 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/25/2014 8:49:04 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="W2K8R2-SQL2K8R2"
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
-  DTS:DTSID="{4252D39F-6801-4448-AF92-363E83632904}"
+  DTS:DTSID="{8018E7E4-336B-4AC2-90D9-A32B25649FD7}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.128"
   DTS:LocaleID="1033"
@@ -13,14 +13,14 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
   DTS:VersionBuild="492"
-  DTS:VersionGUID="{B9A7847C-B120-484B-B445-A462290AECB0}">
+  DTS:VersionGUID="{154C6512-65A6-40C7-84BC-4A4A98DD9AF9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[JDE.BIEXTRACT]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{40DAE2D9-B4DE-4645-B80C-91DF6764485B}"
+      DTS:DTSID="{089EF9AD-41B8-4CBE-9A14-4C7B364D4FCD}"
       DTS:ObjectName="JDE.BIEXTRACT">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::JDEConnectionString]</DTS:PropertyExpression>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="9pv80dqnJw=="
-            IV="C2hqMeMGAM8=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="yuv+AhgLxw=="
+            IV="XfAd1k8MVgQ=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>C2hqMeMGAM+szjAKe0ixzeu1QGnoTtFihHj1J0ZSxb8QWP/Ox6KQLMo74uJ2DAv28Xb2/LnROof0ql6OkvDf2iKmJm7XXzh9PpVpHgLD3YN6usVXn1yl1Q+he+KKeAsG2703XCnWLYsh4spLFbttzQrHSBpr0Hty</CipherValue>
+              <CipherValue>XfAd1k8MVgRk2jqMP6e15J9AU1wpLEH0R4G8aTYQb7dE9pgCCRqoMcgJG01IfBU2lCu1WULRX6kk2vbk8AjJEXMkOiC3iTA8Sz2sxQQbLEBuRLX8q3cmqlbbnsh8k6t/oLlzzTTvzYSVSLk4fXxnNP1QlRkeGKTr</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,7 +50,7 @@
       DTS:ConfigString="Log"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
-      DTS:DTSID="{1C5EF4C1-98B7-40C6-BB15-2DDCB1AE1DEE}"
+      DTS:DTSID="{08A509E5-7C3C-40C1-B968-EB205CFE465C}"
       DTS:ObjectName="SSIS log provider for SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -61,7 +61,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{F094BFA4-1D61-444B-837E-BE1ED475561F}"
+      DTS:DTSID="{28ED2FD3-6D11-4216-B89B-9A3A8BA118D7}"
       DTS:ObjectName="P_COM_LIB">
       <DTS:Property
         DTS:DataType="8"
@@ -70,7 +70,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{CCF357A6-FAEE-47F3-B148-1A1CD2884089}"
+      DTS:DTSID="{667D41A0-5669-4D95-8409-61BEBEDF26EC}"
       DTS:ObjectName="P_DTA_LIB">
       <DTS:Property
         DTS:DataType="8"
@@ -79,7 +79,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{62A22C78-57FA-48EC-8054-B6816CD7AA88}"
+      DTS:DTSID="{01DD133E-12A3-4F19-B71B-D2B629F9BA1A}"
       DTS:ObjectName="P_LAST_RUN_DT">
       <DTS:Property
         DTS:DataType="8"
@@ -88,7 +88,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{54577E82-34D9-4459-A4B3-E58F0BA57F12}"
+      DTS:DTSID="{19AE53DF-A67F-42B8-A9F8-159ED2F10F84}"
       DTS:ObjectName="P_SOURCE_SYSTEM_ID">
       <DTS:Property
         DTS:DataType="8"
@@ -98,7 +98,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D61A3162-B709-463F-B1B8-FF2263D27785}"
+      DTS:DTSID="{4DF56BB4-C3EE-4F9E-B80F-D3053DF3648C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;1&quot; + SUBSTRING((DT_WSTR,10)(YEAR(GETUTCDATE() ) - @[$Project::YearsOfHistory]  ),3,2)+ &quot;001&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -109,7 +109,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2F719A7C-1C38-4F95-9A5B-D6CAB6A680D9}"
+      DTS:DTSID="{C3155F13-9157-4229-BC1E-729DF3827293}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastUpdatedJulianDate">
@@ -118,7 +118,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{98CAE2A0-F6F2-499D-BBA8-4D1E24C33DC6}"
+      DTS:DTSID="{700EFD70-B174-4F07-B18E-55FD47AA177C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DELETE FROM &quot; +  @[User::StagingTableName] +&#xA;&quot; WITH (ROWLOCK) WHERE UniqueKey = ? &quot;"
       DTS:IncludeInDebugDump="2345"
@@ -129,7 +129,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B9C7AF00-06E7-4484-B268-3D2E56D69197}"
+      DTS:DTSID="{FFA1935D-A9B3-4992-B133-33AF2930CD10}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4201  &#xA;&#xA;WHERE&#xA; 1=1&#xA; &#xA;&#xA;AND SHTRDJ&gt;= &quot; + &#xA; (DT_WSTR,10) @[User::LastHistoricalDate]  + &quot; &#xA;AND SHUPMJ&gt;=&quot; + (DT_WSTR,10) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
@@ -152,7 +152,7 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C0389AFD-27C0-48DC-8D36-9502DF66437C}"
+      DTS:DTSID="{CFF1D725-A33C-4ABA-9B89-2A26DA506996}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT UniqueKey FROM  &quot; +  @[User::StagingTableName] +&#xA;&quot; WHERE SourceSystemID = '&quot; + @[$Package::P_SOURCE_SYSTEM_ID] + &quot;' &quot;"
       DTS:IncludeInDebugDump="2345"
@@ -163,7 +163,7 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C8C75C5F-4C61-4975-BBB3-0319026F23A0}"
+      DTS:DTSID="{AAF51281-CC41-454E-8738-C3D2B6097273}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="StagingTableName">
@@ -215,7 +215,7 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{1C5EF4C1-98B7-40C6-BB15-2DDCB1AE1DEE}" />
+        DTS:InstanceID="{08A509E5-7C3C-40C1-B968-EB205CFE465C}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -223,7 +223,7 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
       DTS:refId="Package\Data Processing"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3C0A93CC-AA40-4536-AFF8-19B3D4992B0A}"
+      DTS:DTSID="{94A3DAE5-B667-4AF7-B75E-3EF9D1A1180C}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Processing">
@@ -235,7 +235,7 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
           DTS:refId="Package\Data Processing\StageLoad"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{31C293C4-611A-4E30-AB47-CB71ADB556D7}"
+          DTS:DTSID="{7D2BB81A-14DB-43D6-B1BA-C27858786E3E}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="StageLoad"
@@ -632,8 +632,8 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
                   <connections>
                     <connection
                       refId="Package\Data Processing\StageLoad\Delete Matching Rows.Connections[OleDbConnection]"
-                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Staging]"
+                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:invalid"
+                      connectionManagerRefId="{68DA1430-4604-42B8-8F14-2A561148FB28}:invalid"
                       description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                       name="OleDbConnection" />
                   </connections>
@@ -761,8 +761,8 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
                   <connections>
                     <connection
                       refId="Package\Data Processing\StageLoad\Insert After Delete.Connections[OleDbConnection]"
-                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Staging]"
+                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:invalid"
+                      connectionManagerRefId="{68DA1430-4604-42B8-8F14-2A561148FB28}:invalid"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2170,8 +2170,8 @@ AND SHUPMJ&gt;=0</DTS:VariableValue>
                   <connections>
                     <connection
                       refId="Package\Data Processing\StageLoad\Insert New Rows.Connections[OleDbConnection]"
-                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Staging]"
+                      connectionManagerID="{68DA1430-4604-42B8-8F14-2A561148FB28}:invalid"
+                      connectionManagerRefId="{68DA1430-4604-42B8-8F14-2A561148FB28}:invalid"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -5720,8 +5720,8 @@ where [refTable].[UniqueKey] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Data Processing\StageLoad\Unique Key Lookup.Connections[OleDbConnection]"
-                      connectionManagerID="{8A6DAF0E-5EA9-4518-A16E-EDE8F0CC4461}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DataWarehouse]"
+                      connectionManagerID="{8A6DAF0E-5EA9-4518-A16E-EDE8F0CC4461}:invalid"
+                      connectionManagerRefId="{8A6DAF0E-5EA9-4518-A16E-EDE8F0CC4461}:invalid"
                       description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
                       name="OleDbConnection" />
                   </connections>
@@ -5857,7 +5857,7 @@ where [refTable].[UniqueKey] = ?</property>
       DTS:refId="Package\Pre-step"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{0A07BA36-F9FC-43F3-937B-24DE7DF1180A}"
+      DTS:DTSID="{8DB7933D-5C13-4BDF-856E-D5917D4DBDFC}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-step">
@@ -5869,7 +5869,7 @@ where [refTable].[UniqueKey] = ?</property>
           DTS:refId="Package\Pre-step\Get JulianJDEDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6EA925FB-9E5F-480C-88F0-9A49A3CA6E95}"
+          DTS:DTSID="{67F970E6-A1A2-4019-9102-448AE8CC2421}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get JulianJDEDate"
@@ -5901,7 +5901,7 @@ where [refTable].[UniqueKey] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{5D38E6F0-EB7C-4A81-9623-1D31FBDCCA34}"
+      DTS:DTSID="{D295B90A-0AB7-4DCC-87AA-BC70EFA6EE7B}"
       DTS:From="Package\Pre-step"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
