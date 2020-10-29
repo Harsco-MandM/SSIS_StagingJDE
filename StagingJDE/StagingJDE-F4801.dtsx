@@ -7,13 +7,13 @@
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
   DTS:DTSID="{C008BF19-B5E9-417B-BFC2-F476DB75E91C}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="1033"
   DTS:ObjectName="StagingJDE-F4801"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="491"
-  DTS:VersionGUID="{0B88F7B7-2F0C-4FF9-ADE8-BAC91EEE35DE}">
+  DTS:VersionBuild="500"
+  DTS:VersionGUID="{3BD3895B-0E1E-47CC-84FF-C2CE831821E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="JmC71NYLSA=="
-            IV="cYPRFbTtDe4=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="OTV+H8mMXg=="
+            IV="ikqWsfw1zpQ=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>cYPRFbTtDe64YQ4TqEFYxBEjfM8SxnaS2WKkvHbyT/af962p5bnEluKM3pKg20Tn030fPsAHKDyrEKStWFsYCGN6hsbiWIG0/OsglFUg1xGq4Mpl9t3Urw7EdtxRUVl41GssjTCYUlRkGdjUpJeIPTJq2ZbNsGoT</CipherValue>
+              <CipherValue>ikqWsfw1zpQ1BrOjoZxUR2MZqhgrvsPDHzln3bnX2/chM6dLAl7+k9W7LNfmwTyLBuC4+xPX78qLzVF1/pXcOWO3Fc5RpftZUOi/Ta3XvmDdZNYafdjcvegjTjJ9xcsKlqvdV14yZNwQcX8Dz8eJz8P0hQ7n4o/E</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -131,7 +131,7 @@
       DTS:CreationName=""
       DTS:DTSID="{976C175F-8E51-448D-B833-C0CC5C36CC2A}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4801  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND WATRDJ &gt;= &quot;+ @[User::LastHistoricalDate]  + &quot; &#xA;AND WAUPMJ &gt;= &quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4801  &#xA;WHERE&#xA;  WAUPMJ &gt;= &quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate] + &quot; and WADOCO not in (select WADOCO from &quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F4801 group by WADOCO having count(*) &gt; 1)&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -143,10 +143,7 @@
 FROM 
 JPDTAFR73.F4801  
 WHERE
- 1=1
- 
-AND WATRDJ &gt;= 118001 
-AND WAUPMJ &gt;= 0</DTS:VariableValue>
+  WAUPMJ &gt;= 0 and WADOCO not in (select WADOCO from JPDTAFR73.F4801 group by WADOCO having count(*) &gt; 1)</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -4487,10 +4484,7 @@ AND WAUPMJ &gt;= 0</DTS:VariableValue>
 FROM 
 JPDTAFR73.F4801  
 WHERE
- 1=1
- 
-AND WATRDJ &gt;= 118001 
-AND WAUPMJ &gt;= 0</property>
+  WAUPMJ &gt;= 0 and WADOCO not in (select WADOCO from JPDTAFR73.F4801 group by WADOCO having count(*) &gt; 1)</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."

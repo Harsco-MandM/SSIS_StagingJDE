@@ -7,13 +7,13 @@
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
   DTS:DTSID="{B6FD6D3A-61F4-4698-B698-727479CD85AF}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
   DTS:LocaleID="1033"
   DTS:ObjectName="StagingJDE-F0911"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="492"
-  DTS:VersionGUID="{7EA70A2F-AEC9-4BBA-AEE4-F648B2AEAB95}">
+  DTS:VersionBuild="494"
+  DTS:VersionGUID="{12300339-AFD3-4D8A-B235-C495B789BB79}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="R7W8aJuKqw=="
-            IV="mueLL8PSa0g=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="9pvSO3U9WA=="
+            IV="eo+1gV+UYMI=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>mueLL8PSa0hXr3dXhMxw53cOK2eS7FqZ/qHXm226/GELhzBIZ9DpWkXSJTlIB3QBk+6n39Gv1sxzHYUjbd/qO0zcaBRvPJALtUaNfHxcmNjURKYwbVXdSCRzYa3yk1d93ENI56ARVa+FiwnrwjU/PmIy5TOqT20a</CipherValue>
+              <CipherValue>eo+1gV+UYMKX+y9Z5TRzaaDtACR0QN95MdhSMgnUBLO6zaaZlz9FhHTcPmGj8VBiq1i0a6BBi6VUXvU40S4kPJS241mQXvcL6JVnlJKFKJyTuDyEAq3UM0oYQZBgaDcLi95rJOnS6JpE6zEkZrTfJOnweGP1cR5w</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -131,7 +131,7 @@
       DTS:CreationName=""
       DTS:DTSID="{FAD3C090-6691-4C35-8567-34589F7917AB}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0911  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND GLDGJ &gt;= &quot; + &#xA; (DT_WSTR,10) @[User::LastHistoricalDate]  + &quot; &#xA;AND  GLUPMJ &gt;=&quot; + (DT_WSTR,10) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F0911  &#xA;WHERE&#xA; 1=1&#xA; &#xA;AND GLKCO not in ('00000','99999') AND trim(GLMCU) != 'MODEL' AND GLDGJ &gt;= &quot; + &#xA; (DT_WSTR,10) @[User::LastHistoricalDate]  + &quot; &#xA;AND  GLUPMJ &gt;=&quot; + (DT_WSTR,10) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -145,7 +145,7 @@ JPDTAFR73.F0911
 WHERE
  1=1
  
-AND GLDGJ &gt;= 118001 
+AND GLKCO not in ('00000','99999') AND trim(GLMCU) != 'MODEL' AND GLDGJ &gt;= 118001 
 AND  GLUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -3988,7 +3988,7 @@ JPDTAFR73.F0911
 WHERE
  1=1
  
-AND GLDGJ &gt;= 118001 
+AND GLKCO not in ('00000','99999') AND trim(GLMCU) != 'MODEL' AND GLDGJ &gt;= 118001 
 AND  GLUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
@@ -6684,7 +6684,9 @@ where [refTable].[UniqueKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6706,7 +6708,9 @@ where [refTable].[UniqueKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6728,7 +6732,9 @@ where [refTable].[UniqueKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6786,7 +6792,9 @@ where [refTable].[UniqueKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
