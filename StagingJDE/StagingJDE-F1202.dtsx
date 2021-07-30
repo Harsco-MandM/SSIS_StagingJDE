@@ -7,13 +7,13 @@
   DTS:CreatorName="W2K8R2-SQL2K8R2\Administrator"
   DTS:DTSID="{F3C03FCD-E014-437D-B5F5-DABE188CF032}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="1033"
   DTS:ObjectName="StagingJDE-F1202"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="487"
-  DTS:VersionGUID="{C195BA87-4703-42CD-A8C4-F0409A03DEE8}">
+  DTS:VersionBuild="493"
+  DTS:VersionGUID="{29A3FF4A-020E-415B-AFC4-014E924E5B08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="hE/yPV2ryA=="
-            IV="GTMnoTxof0o=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="rBxGjspnKg=="
+            IV="GduJS5vGAFU=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>GTMnoTxof0ra20zQqN1P0NRojZ7e5vAOjf289Nv+Vd2unqVB6NovqNPbKUYxkdPgmY8nbYU4jj6HdTjtbNP2BHnwFb0A4gc6i9p6MLK3YNB0btCNiaEjMzWdwr1fUqWaMammc56l6rf5+9yx4j8Q1a0GSA5XORF2</CipherValue>
+              <CipherValue>GduJS5vGAFUKJSz9FxHQSu5IE9blDYJ7evNoXfM+/P2pv/CTHKDa7i7OPZRjRkYZz2ZVgBvNyBj4ZI1DL7x43hrfPqQ3mjJWHiA7atDP8wJ/pKrce9eXttHipHulDoR5M9Df+CwDSWnpXSAmReaiwTE7pg6WmSXY</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -65,7 +65,7 @@
       DTS:ObjectName="P_COM_LIB">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">JPCOMFR73</DTS:Property>
+        DTS:Name="ParameterValue">JPCOMMX73</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -74,7 +74,7 @@
       DTS:ObjectName="P_DTA_LIB">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">JPDTAFR73</DTS:Property>
+        DTS:Name="ParameterValue">JPDTAMX73</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -92,7 +92,7 @@
       DTS:ObjectName="P_SOURCE_SYSTEM_ID">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">63</DTS:Property>
+        DTS:Name="ParameterValue">45</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -120,7 +120,7 @@
       DTS:CreationName=""
       DTS:DTSID="{D42CF49E-4845-48DE-8B85-66557E202505}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F1202  &#xA;WHERE&#xA; 1=1&#xA; AND FLAN01+FLAN02+FLAN03+FLAN04+FLAN05+FLAN06+FLAN07+FLAN08+FLAN09+FLAN10+FLAN11+FLAN12 != 0 &#xA;AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT &#xA;*&#xA; &#xA;&#xA;FROM &#xA;&quot; +  @[$Package::P_DTA_LIB] &#xA; + &quot;.F1202  &#xA;WHERE&#xA; 1=1&#xA; AND  ( FLAN01+FLAN02+FLAN03+FLAN04+FLAN05+FLAN06+FLAN07+FLAN08+FLAN09+FLAN10+FLAN11+FLAN12 != 0 OR FLAPYC != 0) &#xA;AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
@@ -130,10 +130,10 @@
  
 
 FROM 
-JPDTAFR73.F1202  
+JPDTAMX73.F1202  
 WHERE
  1=1
- AND FLAN01+FLAN02+FLAN03+FLAN04+FLAN05+FLAN06+FLAN07+FLAN08+FLAN09+FLAN10+FLAN11+FLAN12 != 0 
+ AND  ( FLAN01+FLAN02+FLAN03+FLAN04+FLAN05+FLAN06+FLAN07+FLAN08+FLAN09+FLAN10+FLAN11+FLAN12 != 0 OR FLAPYC != 0) 
 AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
@@ -145,7 +145,7 @@ AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=0</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="SQLLookup">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT UniqueKey FROM  StagingJDE.F1202 WHERE SourceSystemID = '63' </DTS:VariableValue>
+        DTS:DataType="8">SELECT UniqueKey FROM  StagingJDE.F1202 WHERE SourceSystemID = '45' </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2536,10 +2536,10 @@ AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=0</DTS:VariableValue>
  
 
 FROM 
-JPDTAFR73.F1202  
+JPDTAMX73.F1202  
 WHERE
  1=1
- AND FLAN01+FLAN02+FLAN03+FLAN04+FLAN05+FLAN06+FLAN07+FLAN08+FLAN09+FLAN10+FLAN11+FLAN12 != 0 
+ AND  ( FLAN01+FLAN02+FLAN03+FLAN04+FLAN05+FLAN06+FLAN07+FLAN08+FLAN09+FLAN10+FLAN11+FLAN12 != 0 OR FLAPYC != 0) 
 AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
@@ -3697,7 +3697,7 @@ AND (flctry * 100) + FLFY &gt;= 2010 AND FLUPMJ &gt;=0</property>
                       description="Spécifie l'instruction SQL qui génère la table de correspondance."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT UniqueKey FROM  StagingJDE.F1202 WHERE SourceSystemID = '63' </property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT UniqueKey FROM  StagingJDE.F1202 WHERE SourceSystemID = '45' </property>
                     <property
                       dataType="System.String"
                       description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
@@ -4009,123 +4009,33 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
           TopLeft="717,453" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
-        <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
           TopLeft="727,553" />
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="38,33.1999995970726" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
           TopLeft="463.083333861083,451.5" />
         <NodeLayout
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="548,40" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
+        <NodeLayout
           Size="155,42"
           Id="Package\Data Processing\StageLoad\Conditional Split"
           TopLeft="585,272" />
         <NodeLayout
+          Size="142,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
+        <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
           TopLeft="299.583333861083,34.5" />
-        <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="548,40" />
-        <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="661.75,184">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,88"
-              Start="0,0"
-              End="0,80.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,80.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.67701171875,34.4453125,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[Sortie de commande OLE DB]"
-          TopLeft="809.25,495">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58"
-              Start="0,0"
-              End="0,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
-          TopLeft="663.5,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
-          TopLeft="180,54.8499997985363">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.583333861083,0"
-              Start="0,0"
-              End="112.083333861083,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="112.083333861083,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[INSERT]"
           TopLeft="638,314">
@@ -4158,7 +4068,7 @@ where [refTable].[UniqueKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-65.2986455694585,60.8429118773946,35.180625,9.5341796875"
+              BoundingBox="-100.341672913208,60.8429118773946,105.2666796875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4181,7 +4091,9 @@ where [refTable].[UniqueKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="19.4032158819585,5,61.110234375,11.228515625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4216,7 +4128,103 @@ where [refTable].[UniqueKey] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="43.06705078125,61.4521072796935,35.3658984375,9.2705078125"
+              BoundingBox="13.31826171875,61.4521072796935,94.8634765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="661.75,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88"
+              Start="0,0"
+              End="0,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-126.85240234375,34.4453125,253.7048046875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Sortie de commande OLE DB]"
+          TopLeft="809.25,495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.18056640625,19.62841796875,50.3611328125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
+          TopLeft="663.5,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.5551171875,20.6357421875,61.110234375,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[ODBC Source Output]"
+          TopLeft="180,54.8499997985363">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.583333861083,0"
+              Start="0,0"
+              End="112.083333861083,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.083333861083,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.4865497430415,5,61.110234375,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
