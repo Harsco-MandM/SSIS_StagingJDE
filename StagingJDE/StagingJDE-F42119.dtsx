@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F42119"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="525"
-  DTS:VersionGUID="{6CF495C3-1F12-4C21-B9A2-2ACEA60BF96F}">
+  DTS:VersionBuild="533"
+  DTS:VersionGUID="{32244DD9-E78B-46C2-AC56-3482EEDD05AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ixL45q4p6Q=="
-            IV="yNhOtUNzfJg=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="flUkuwK9Jg=="
+            IV="FR3FJahssvo=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>yNhOtUNzfJj5hTePP6+Dj+k6a1hEdbILX7RyUFYpup+nhZf3PTQXkLLDv3MNEtN3kAMiWr0F8Jd1YxBc22bW/oP+ljcZ/6uUPTHiSQt2DKQgUWoNTLu3nA5GkNvfyrfkwyfAXTvbNwilZzu8qX64Bs7bCDm/fFph</CipherValue>
+              <CipherValue>FR3FJahssvrXbVw0YVBTTioKVgw5Axh5DxthZSe/pIGScrjGWQC3Qt7SO75F5Te1YdcY1E+xwZCWv5J9Dk9mO9l0muHyTsl4fvRiCLQAn4cIMxEob7n9T6eEKZp+q4Ag0oPyTNcWpW15g9i5JlLDX6j503V173rw</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -120,12 +120,12 @@
       DTS:CreationName=""
       DTS:DTSID="{CFEC8C8D-5BF8-4C61-A8F3-019D39CC2A3A}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT * FROM &quot; +@[$Package::P_DTA_LIB] &#xA; + &quot;.F42119&quot;"
+      DTS:Expression="&quot;SELECT DISTINCT * FROM &quot; +@[$Package::P_DTA_LIB] &#xA; + &quot;.F42119&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM JPDTAFR73.F42119</DTS:VariableValue>
+        DTS:DataType="8">SELECT DISTINCT * FROM JPDTAFR73.F42119</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -286,19 +286,32 @@
                           cachedPrecision="8"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDAN8]" />
                         <inputColumn
-                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[SDMCU]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="12"
-                          cachedName="SDMCU"
-                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDMCU]" />
-                        <inputColumn
                           refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[SDSFXO]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="3"
                           cachedName="SDSFXO"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDSFXO]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[SDNXTR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="SDNXTR"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDNXTR]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[SDLTTR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="SDLTTR"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDLTTR]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[SDUPMJ]"
+                          cachedDataType="numeric"
+                          cachedName="SDUPMJ"
+                          cachedPrecision="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDUPMJ]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -431,7 +444,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="114"
+                          length="146"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -440,13 +453,36 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDDOCO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDDCTO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDKCOO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDLNID]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDSFXO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDAN8]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDMCU]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDDOCO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDDCTO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDKCOO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDLNID]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDSFXO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDAN8]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDNXTR]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDLTTR]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDUPMJ]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)SDDOCO + "." + (DT_STR,15,1252)SDDCTO + "." + (DT_STR,15,1252)SDKCOO + "." + (DT_STR,15,1252)SDLNID + "." + (DT_STR,15,1252)SDSFXO + "." + (DT_STR,15,1252)SDAN8 + "." + (DT_STR,15,1252)SDMCU</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)SDDOCO + "." + (DT_STR,15,1252)SDDCTO + "." + (DT_STR,15,1252)SDKCOO + "." + (DT_STR,15,1252)SDLNID + "." + (DT_STR,15,1252)SDSFXO + "." + (DT_STR,15,1252)SDAN8 + "." + (DT_STR,15,1252)SDNXTR + "." + (DT_STR,15,1252)SDLTTR + "." + (DT_STR,15,1252)SDUPMJ</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]"
+                          name="TransactionDate"
+                          precision="6"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDUPMJ]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">SDUPMJ</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -493,7 +529,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Conditional Split.Inputs[Entrée de fractionnement conditionnel].Columns[UniqueKey_Lkp]"
                           cachedDataType="wstr"
-                          cachedLength="100"
+                          cachedLength="200"
                           cachedName="UniqueKey_Lkp"
                           lineageId="Package\Data Processing\StageLoad\Unique Key Lookup.Outputs[Sortie de recherche avec correspondance].Columns[UniqueKey_Lkp]" />
                       </inputColumns>
@@ -610,7 +646,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Delete Matching Rows.Inputs[Entrée de commande OLE DB].Columns[UniqueKey_Lkp]"
                           cachedDataType="wstr"
-                          cachedLength="100"
+                          cachedLength="200"
                           cachedName="UniqueKey_Lkp"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Delete Matching Rows.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
                           lineageId="Package\Data Processing\StageLoad\Unique Key Lookup.Outputs[Sortie de recherche avec correspondance].Columns[UniqueKey_Lkp]" />
@@ -774,7 +810,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="114"
+                          cachedLength="146"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -2446,6 +2482,12 @@
                           cachedPrecision="6"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[SDTDAY]"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDTDAY]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[TransactionDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="TransactionDate"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3711,6 +3753,10 @@
                           dataType="numeric"
                           name="SDTDAY"
                           precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
+                          dataType="dbDate"
+                          name="TransactionDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3849,7 +3895,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="114"
+                          cachedLength="146"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -5521,6 +5567,12 @@
                           cachedPrecision="6"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[SDTDAY]"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SDTDAY]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[TransactionDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="TransactionDate"
+                          externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6786,6 +6838,10 @@
                           dataType="numeric"
                           name="SDTDAY"
                           precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[TransactionDate]"
+                          dataType="dbDate"
+                          name="TransactionDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6815,6 +6871,87 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+                  description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+                  name="JDE Transaction Date conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]"
+                      description="Entrée de la transformation de colonnes dérivées"
+                      name="Entrée de colonne dérivée">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée].Columns[TransactionDate]"
+                          cachedDataType="numeric"
+                          cachedName="TransactionDate"
+                          cachedPrecision="6"
+                          lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée]"
+                      description="Sortie par défaut de la transformation de colonnes dérivées"
+                      exclusionGroup="1"
+                      name="Sortie de colonne dérivée"
+                      synchronousInputId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Calcul"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée].Columns[TransactionDate]"
+                          name="TransactionDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expression de colonne dérivée"
+                              name="Expression">(#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]} == 0 ? (DT_DATE)"1900-01-01" : [DATEADD]("day",(DT_I8)[RIGHT]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]},3) - 1,(DT_DATE)((DT_STR,20,1252)(#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]} &gt;= 100000 ? (DT_STR,10,1252)(20 + (DT_I8)([SUBSTRING]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]},1,1)) - 1) : "19") + (#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]} &gt;= 100000 ? [SUBSTRING]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]},2,2) : [SUBSTRING]((DT_STR,10,1252)#{Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[TransactionDate]},1,2)) + "-01-01")))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expression claire de colonne dérivée"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(TransactionDate == 0 ? (DT_DATE)"1900-01-01" : DATEADD("day",(DT_I8)RIGHT((DT_STR,10,1252)TransactionDate,3) - 1,(DT_DATE)((DT_STR,20,1252)(TransactionDate &gt;= 100000 ? (DT_STR,10,1252)(20 + (DT_I8)(SUBSTRING((DT_STR,10,1252)TransactionDate,1,1)) - 1) : "19") + (TransactionDate &gt;= 100000 ? SUBSTRING((DT_STR,10,1252)TransactionDate,2,2) : SUBSTRING((DT_STR,10,1252)TransactionDate,1,2)) + "-01-01")))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée]"
+                      description="Sortie d'erreur de la transformation de colonnes dérivées"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Sortie d'erreur de colonne dérivée"
+                      synchronousInputId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Data Processing\StageLoad\ODBC Source"
                   componentClassID="Attunity.SSISODBCSrc"
                   description="ODBC Source"
@@ -6831,7 +6968,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       expressionType="Notify"
-                      name="SqlCommand">SELECT * FROM JPDTAFR73.F42119</property>
+                      name="SqlCommand">SELECT DISTINCT * FROM JPDTAFR73.F42119</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -11511,7 +11648,7 @@
                       description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT UniqueKey FROM  StagingJDE.F42119 WHERE SourceSystemID = '63' ) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT UniqueKey FROM  StagingJDE.F42119 WHERE SourceSystemID = '63') [refTable]
 where [refTable].[UniqueKey] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -11543,7 +11680,7 @@ where [refTable].[UniqueKey] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indique si les métadonnées sont à référencer en format XML."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="UniqueKey" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="UniqueKey" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -11574,7 +11711,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="114"
+                          cachedLength="146"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
@@ -11605,7 +11742,7 @@ where [refTable].[UniqueKey] = ?</property>
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Outputs[Sortie de recherche avec correspondance].Columns[UniqueKey_Lkp]"
                           dataType="wstr"
                           errorOrTruncationOperation="Copie de colonnes"
-                          length="100"
+                          length="200"
                           lineageId="Package\Data Processing\StageLoad\Unique Key Lookup.Outputs[Sortie de recherche avec correspondance].Columns[UniqueKey_Lkp]"
                           name="UniqueKey_Lkp"
                           truncationRowDisposition="FailComponent">
@@ -11660,7 +11797,7 @@ where [refTable].[UniqueKey] = ?</property>
                   startId="Package\Data Processing\StageLoad\Conditional Split.Outputs[DELETE]" />
                 <path
                   refId="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
-                  endId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche]"
+                  endId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Inputs[Entrée de colonne dérivée]"
                   name="Derived Column Output"
                   startId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output]" />
                 <path
@@ -11673,6 +11810,11 @@ where [refTable].[UniqueKey] = ?</property>
                   endId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input]"
                   name="ODBC Source Output"
                   startId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output]" />
+                <path
+                  refId="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
+                  endId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche]"
+                  name="Sortie de colonne dérivée"
+                  startId="Package\Data Processing\StageLoad\JDE Transaction Date conversion.Outputs[Sortie de colonne dérivée]" />
                 <path
                   refId="Package\Data Processing\StageLoad.Paths[Sortie de commande OLE DB]"
                   endId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input]"
@@ -11808,14 +11950,6 @@ where [refTable].[UniqueKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Data Processing\StageLoad\Conditional Split"
-          TopLeft="585,272" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="38,33.1999995970726" />
-        <NodeLayout
           Size="162,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
           TopLeft="463.083333861083,451.5" />
@@ -11832,9 +11966,17 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Insert After Delete"
           TopLeft="727,552" />
         <NodeLayout
+          Size="149,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
+        <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
           TopLeft="299.583333861083,34.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Processing\StageLoad\Conditional Split"
+          TopLeft="585,272" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="663,184">
@@ -11940,40 +12082,6 @@ where [refTable].[UniqueKey] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
-          TopLeft="370.083333861083,76.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="293.416666138917,65.5"
-              Start="0,0"
-              End="293.416666138917,58">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.75"
-                    Point2="0,32.75"
-                    Point3="4,32.75" />
-                  <mssgle:LineSegment
-                    End="289.416666138917,32.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="289.416666138917,32.75"
-                    Point2="293.416666138917,32.75"
-                    Point3="293.416666138917,36.75" />
-                  <mssgle:LineSegment
-                    End="293.416666138917,58" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[DELETE]"
           TopLeft="687,314">
           <EdgeLayout.Curve>
@@ -12009,17 +12117,57 @@ where [refTable].[UniqueKey] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="552,37" />
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
+          TopLeft="440.583333861083,56.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111.416666138917,0"
+              Start="0,0"
+              End="103.916666138917,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="103.916666138917,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
+          TopLeft="666.75,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Processing\StageLoad\Insert New Rows">
     <Properties>
@@ -12039,7 +12187,7 @@ where [refTable].[UniqueKey] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -12049,7 +12197,7 @@ where [refTable].[UniqueKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12066,6 +12214,14 @@ where [refTable].[UniqueKey] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
