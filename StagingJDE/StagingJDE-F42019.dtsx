@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F42019"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="522"
-  DTS:VersionGUID="{D1568F9B-BFA6-453A-84EC-F87B7461F370}">
+  DTS:VersionBuild="523"
+  DTS:VersionGUID="{C3033CC9-05BA-45B8-A3BB-07D23D1F2EA0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="SCPmvEAK6Q=="
-            IV="RqKKkoAlGA0=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="xtLZRQsCig=="
+            IV="P2qAxANOoMU=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>RqKKkoAlGA0iYtnr6NXqD7o1j4cNbNBxeWsexoSutZYQi58eVtv6GKlxtwX5iWHqSTzI0fcqW7foircapuNRDC7WE8M0z6N4euYqq7AITTxmjFYAOmGgVQA29nUJ2wm5pYGymO3ONpLna/h8cj6dHOa1QOYe/IIN</CipherValue>
+              <CipherValue>P2qAxANOoMVnnRNnz4aERPQ74sF0phdCvT3jNP2wGFXQrDJzceCd66K9HBh4yK9c33zcKUdNUr3ZvjGLZFhPgpA+trw7IKGl5XHxg84YTWBZNRWVQIT9Xe6QSOY5rpbl+IYLmZisNkPzMOM6CqcQbuMWmYXOMr9R</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -292,6 +292,12 @@
                           cachedName="SHUPMJ"
                           cachedPrecision="6"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHUPMJ]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[SHTDAY]"
+                          cachedDataType="numeric"
+                          cachedName="SHTDAY"
+                          cachedPrecision="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHTDAY]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -424,7 +430,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="98"
+                          length="114"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -433,13 +439,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHDOCO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHDCTO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHKCOO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHSFXO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHAN8]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHUPMJ]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHDOCO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHDCTO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHKCOO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHSFXO]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHAN8]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHUPMJ]} + "." + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[SHTDAY]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)SHDOCO + "." + (DT_STR,15,1252)SHDCTO + "." + (DT_STR,15,1252)SHKCOO + "." + (DT_STR,15,1252)SHSFXO + "." + (DT_STR,15,1252)SHAN8 + "." + (DT_STR,15,1252)SHUPMJ</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "." + (DT_STR,15,1252)SHDOCO + "." + (DT_STR,15,1252)SHDCTO + "." + (DT_STR,15,1252)SHKCOO + "." + (DT_STR,15,1252)SHSFXO + "." + (DT_STR,15,1252)SHAN8 + "." + (DT_STR,15,1252)SHUPMJ + "." + (DT_STR,15,1252)SHTDAY</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -790,7 +796,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="98"
+                          cachedLength="114"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -2199,7 +2205,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="98"
+                          cachedLength="114"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -5699,7 +5705,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="98"
+                          cachedLength="114"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
@@ -5938,25 +5944,25 @@ where [refTable].[UniqueKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Data Processing\StageLoad\Conditional Split"
-          TopLeft="585,272" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="543,36" />
         <NodeLayout
           Size="189,42"
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
           TopLeft="717,453" />
         <NodeLayout
-          Size="149,42"
-          Id="Package\Data Processing\StageLoad\ODBC Source"
-          TopLeft="38,33.1999995970726" />
+          Size="175,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Processing\StageLoad\Insert After Delete"
           TopLeft="727,552" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Data Processing\StageLoad\ODBC Source"
+          TopLeft="38,33.1999995970726" />
         <NodeLayout
           Size="162,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
@@ -5965,6 +5971,10 @@ where [refTable].[UniqueKey] = ?</property>
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
           TopLeft="299.583333861083,34.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Processing\StageLoad\Conditional Split"
+          TopLeft="585,272" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="663,184">
@@ -6003,6 +6013,28 @@ where [refTable].[UniqueKey] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
+          TopLeft="662.25,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6070,6 +6102,28 @@ where [refTable].[UniqueKey] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
+          TopLeft="440.583333861083,56.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.416666138917,0"
+              Start="0,0"
+              End="94.916666138917,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.916666138917,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[DELETE]"
           TopLeft="687,314">
           <EdgeLayout.Curve>
@@ -6105,54 +6159,6 @@ where [refTable].[UniqueKey] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="543,36" />
-        <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[Derived Column Output]"
-          TopLeft="440.583333861083,56.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="102.416666138917,0"
-              Start="0,0"
-              End="94.916666138917,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="94.916666138917,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Processing\StageLoad.Paths[Sortie de colonne dérivée]"
-          TopLeft="662.25,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64"
-              Start="0,0"
-              End="0,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -6180,14 +6186,6 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
     <Properties>
       <Property>
@@ -6197,6 +6195,14 @@ where [refTable].[UniqueKey] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
