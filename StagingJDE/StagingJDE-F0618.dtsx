@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0618"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="512"
-  DTS:VersionGUID="{B89EDD2B-7080-456A-8BAB-1E431E02B616}">
+  DTS:VersionBuild="513"
+  DTS:VersionGUID="{BFCF94DD-8767-4577-B4B6-BE06107BDDB4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="OUNTJsSVNQ=="
-            IV="/3DvUH5neJ8=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="QEjNtZWpvg=="
+            IV="JRXEcnlpMLE=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>/3DvUH5neJ8Tx7pGCCgvIx7DfAo0j9L0ZVDOoVCDndYQJSX2mIfxjcmY36OkLruLbDP8iCMmkDn1MCsLF+v8+cfPwWj1km0qUggGmsFCRlI17hVzPXeF9wl4Xzn30fH//XLzimE5dbrl6NVaJb94nHAQ+vcwm6DK</CipherValue>
+              <CipherValue>JRXEcnlpMLHi+XUFT8BSrp7Uzz7K7Z8iZ3YC6vY2s90Xu0WCFOUbLIkmUZA8/cC0bmg4WKbAGky2UFI3lrt4XG0GmQ8TBmzDh57HuNxx5n4yPj1MC4cLLq4RKEyjxuYZqc+shbpX8EVVzey5aBXyrgWHt6NxeicI</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -285,6 +285,12 @@
                           cachedName="YTDWK"
                           cachedPrecision="6"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDWK]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[YTCKDT]"
+                          cachedDataType="numeric"
+                          cachedName="YTCKDT"
+                          cachedPrecision="6"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTCKDT]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -417,7 +423,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="77"
+                          length="98"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -426,13 +432,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTAN8]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCO]} + (DT_STR,15,1252)[LTRIM](#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCU]}) + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDGL]} + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDWK]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTAN8]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCO]} + "~" + (DT_STR,15,1252)[LTRIM](#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCU]}) + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDGL]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDWK]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTCKDT]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + (DT_STR,15,1252)YTAN8 + (DT_STR,15,1252)YTHMCO + (DT_STR,15,1252)LTRIM(YTHMCU) + (DT_STR,15,1252)YTDGL + (DT_STR,15,1252)YTDWK</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "~" + (DT_STR,15,1252)YTAN8 + "~" + (DT_STR,15,1252)YTHMCO + "~" + (DT_STR,15,1252)LTRIM(YTHMCU) + "~" + (DT_STR,15,1252)YTDGL + "~" + (DT_STR,15,1252)YTDWK + "~" + (DT_STR,15,1252)YTCKDT</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -760,7 +766,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="77"
+                          cachedLength="98"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -2225,7 +2231,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="77"
+                          cachedLength="98"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -5855,7 +5861,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="77"
+                          cachedLength="98"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
@@ -6094,10 +6100,6 @@ where [refTable].[UniqueKey] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="548,40" />
-        <NodeLayout
           Size="155,42"
           Id="Package\Data Processing\StageLoad\Conditional Split"
           TopLeft="585,272" />
@@ -6105,10 +6107,6 @@ where [refTable].[UniqueKey] = ?</property>
           Size="162,42"
           Id="Package\Data Processing\StageLoad\Insert New Rows"
           TopLeft="463.083333861083,451.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Processing\StageLoad\Delete Matching Rows"
@@ -6122,9 +6120,17 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Insert After Delete"
           TopLeft="727,553" />
         <NodeLayout
+          Size="175,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
+        <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
           TopLeft="299.583333861083,34.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="548,40" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="663,184">
@@ -6326,6 +6332,27 @@ where [refTable].[UniqueKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Processing\StageLoad\Unique Key Lookup">
     <Properties>
       <Property>
@@ -6345,27 +6372,6 @@ where [refTable].[UniqueKey] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\ODBC Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Processing\StageLoad\Insert After Delete">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
