@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0618"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="513"
-  DTS:VersionGUID="{BFCF94DD-8767-4577-B4B6-BE06107BDDB4}">
+  DTS:VersionBuild="514"
+  DTS:VersionGUID="{BD73C999-D1C6-4577-8D56-D65169307F6D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="QEjNtZWpvg=="
-            IV="JRXEcnlpMLE=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="h0fPKAUi1w=="
+            IV="wZ1pHmTVJBs=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>JRXEcnlpMLHi+XUFT8BSrp7Uzz7K7Z8iZ3YC6vY2s90Xu0WCFOUbLIkmUZA8/cC0bmg4WKbAGky2UFI3lrt4XG0GmQ8TBmzDh57HuNxx5n4yPj1MC4cLLq4RKEyjxuYZqc+shbpX8EVVzey5aBXyrgWHt6NxeicI</CipherValue>
+              <CipherValue>wZ1pHmTVJBu7F8ch6ACGMlkE/lKfP8VMc1htSyr+6XtDBF0cnk5PBTST6ZNWd1msm/rWCuHEU9i1BPGPWZGiHl7SQI512n88yuWG7n+zj939eccigUH3EQZkw+PST2PhYm7AGqVVcPFc2t6aPDgRCqv0dqYctifN</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -291,6 +291,12 @@
                           cachedName="YTCKDT"
                           cachedPrecision="6"
                           lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTCKDT]" />
+                        <inputColumn
+                          refId="Package\Data Processing\StageLoad\Add Columns.Inputs[Derived Column Input].Columns[YTPRTR]"
+                          cachedDataType="numeric"
+                          cachedName="YTPRTR"
+                          cachedPrecision="9"
+                          lineageId="Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTPRTR]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -423,7 +429,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Calcul"
                           errorRowDisposition="FailComponent"
-                          length="98"
+                          length="114"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]"
                           name="UniqueKey"
                           truncationRowDisposition="FailComponent">
@@ -432,13 +438,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expression de colonne dérivée"
-                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTAN8]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCO]} + "~" + (DT_STR,15,1252)[LTRIM](#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCU]}) + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDGL]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDWK]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTCKDT]}</property>
+                              name="Expression">@[$Package::P_SOURCE_SYSTEM_ID] + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTAN8]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTPRTR]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCO]} + "~" + (DT_STR,15,1252)[LTRIM](#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTHMCU]}) + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDGL]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTDWK]} + "~" + (DT_STR,15,1252)#{Package\Data Processing\StageLoad\ODBC Source.Outputs[ODBC Source Output].Columns[YTCKDT]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expression claire de colonne dérivée"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "~" + (DT_STR,15,1252)YTAN8 + "~" + (DT_STR,15,1252)YTHMCO + "~" + (DT_STR,15,1252)LTRIM(YTHMCU) + "~" + (DT_STR,15,1252)YTDGL + "~" + (DT_STR,15,1252)YTDWK + "~" + (DT_STR,15,1252)YTCKDT</property>
+                              name="FriendlyExpression">@[$Package::P_SOURCE_SYSTEM_ID] + "~" + (DT_STR,15,1252)YTAN8 + "~" + (DT_STR,15,1252)YTPRTR + "~" + (DT_STR,15,1252)YTHMCO + "~" + (DT_STR,15,1252)LTRIM(YTHMCU) + "~" + (DT_STR,15,1252)YTDGL + "~" + (DT_STR,15,1252)YTDWK + "~" + (DT_STR,15,1252)YTCKDT</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -766,7 +772,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="98"
+                          cachedLength="114"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert After Delete.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -2231,7 +2237,7 @@
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="98"
+                          cachedLength="114"
                           cachedName="UniqueKey"
                           externalMetadataColumnId="Package\Data Processing\StageLoad\Insert New Rows.Inputs[OLE DB Destination Input].ExternalColumns[UniqueKey]"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]" />
@@ -5861,7 +5867,7 @@ where [refTable].[UniqueKey] = ?</property>
                         <inputColumn
                           refId="Package\Data Processing\StageLoad\Unique Key Lookup.Inputs[Entrée de recherche].Columns[UniqueKey]"
                           cachedDataType="wstr"
-                          cachedLength="98"
+                          cachedLength="114"
                           cachedName="UniqueKey"
                           lineageId="Package\Data Processing\StageLoad\Add Columns.Outputs[Derived Column Output].Columns[UniqueKey]">
                           <properties>
