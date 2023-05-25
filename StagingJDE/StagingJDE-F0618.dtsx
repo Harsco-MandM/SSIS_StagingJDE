@@ -12,8 +12,8 @@
   DTS:ObjectName="StagingJDE-F0618"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="514"
-  DTS:VersionGUID="{BD73C999-D1C6-4577-8D56-D65169307F6D}">
+  DTS:VersionBuild="515"
+  DTS:VersionGUID="{B1CFA163-C47D-4025-B930-2BEA671A4AB5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,12 +33,12 @@
           DTS:ConnectionString="uid=MSEXTRACT;Dsn=JDE;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="h0fPKAUi1w=="
-            IV="wZ1pHmTVJBs=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="tzqc0ay9FA=="
+            IV="8wwvtTM0FB0=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>wZ1pHmTVJBu7F8ch6ACGMlkE/lKfP8VMc1htSyr+6XtDBF0cnk5PBTST6ZNWd1msm/rWCuHEU9i1BPGPWZGiHl7SQI512n88yuWG7n+zj939eccigUH3EQZkw+PST2PhYm7AGqVVcPFc2t6aPDgRCqv0dqYctifN</CipherValue>
+              <CipherValue>8wwvtTM0FB0goy59Zx91cT26gRSKOkSP4DZeI4azjsFPaboE4vxO7+y60XgjG1lLa4Rhz0jQIz0lKAAMO4NROWxTyA+HqTmrVKsM595fTOnb5/eGt4AgP37WOP24HDiqQ8kjlmxLK4kSmPtb7neDhojQgA4J02ET</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -120,12 +120,12 @@
       DTS:CreationName=""
       DTS:DTSID="{171F5160-32E6-4377-A8D4-8ECB5BF8C4C1}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT * FROM &quot; +@[$Package::P_DTA_LIB] &#xA; + &quot;.F0618 --WHERE 1=1 AND YTUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
+      DTS:Expression="&quot;SELECT DISTINCT * FROM &quot; +@[$Package::P_DTA_LIB] &#xA; + &quot;.F0618 --WHERE 1=1 AND YTUPMJ &gt;=&quot; + (DT_WSTR,50) @[User::LastUpdatedJulianDate]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQLJDESourceQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM JPDTAFR73.F0618 --WHERE 1=1 AND YTUPMJ &gt;=0</DTS:VariableValue>
+        DTS:DataType="8">SELECT DISTINCT * FROM JPDTAFR73.F0618 --WHERE 1=1 AND YTUPMJ &gt;=0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3658,7 +3658,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       expressionType="Notify"
-                      name="SqlCommand">SELECT * FROM JPDTAFR73.F0618 --WHERE 1=1 AND YTUPMJ &gt;=0</property>
+                      name="SqlCommand">SELECT DISTINCT * FROM JPDTAFR73.F0618 --WHERE 1=1 AND YTUPMJ &gt;=0</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -6126,17 +6126,17 @@ where [refTable].[UniqueKey] = ?</property>
           Id="Package\Data Processing\StageLoad\Insert After Delete"
           TopLeft="727,553" />
         <NodeLayout
-          Size="175,42"
-          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
-          TopLeft="576,142" />
+          Size="236,42"
+          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
+          TopLeft="548,40" />
         <NodeLayout
           Size="141,42"
           Id="Package\Data Processing\StageLoad\Add Columns"
           TopLeft="299.583333861083,34.5" />
         <NodeLayout
-          Size="236,42"
-          Id="Package\Data Processing\StageLoad\JDE Transaction Date conversion"
-          TopLeft="548,40" />
+          Size="175,42"
+          Id="Package\Data Processing\StageLoad\Unique Key Lookup"
+          TopLeft="576,142" />
         <EdgeLayout
           Id="Package\Data Processing\StageLoad.Paths[Sortie de recherche avec correspondance]"
           TopLeft="663,184">
@@ -6364,7 +6364,7 @@ where [refTable].[UniqueKey] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6374,7 +6374,7 @@ where [refTable].[UniqueKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
